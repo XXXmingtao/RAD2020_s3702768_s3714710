@@ -1,3 +1,148 @@
+<body class="home-bg">
+  <div class="home-post-board">
+    <div class="post-board-recent">Recent Post</div>
+    <div class="post-board-selected">Selected Post</div>
+    <div class="post-board-setting">My Setting</div>
+    <div class="post-board-search">
+    </div>
+    <div class="post-board-new">New Post</div>
+    <div class="clear"></div>
+
+    <div class="home-post-card">
+      <div class="post-card-image">
+        <%= image_tag("rails.png", :alt => "comment") %>
+      </div>
+      <div class="post-card-title">
+        <a href="#"><h4 href="#">This is only a test post</h4></a>
+      </div>
+      <div class="post-card-info">
+        <div class="card-info-left">
+          <p>Jack</p>
+          <p>2020-05-22 03:23:48</p>
+          <p>A.I.</p>
+        </div>
+        <div class="card-info-right">
+          <div class="card-info-comment">36</div>
+          <div class="card-info-view">685</div>
+        </div>
+      </div>
+    </div>
+
+<!-- Delete in next stage -->
+<div class="home-post-card">
+      <div class="post-card-image">
+        <%= image_tag("rails.png", :alt => "comment") %>
+      </div>
+      <div class="post-card-title">
+        <a href="#"><h4 href="#">This is another test post!</h4></a>
+      </div>
+      <div class="post-card-info">
+        <div class="card-info-left">
+          <p>Robin</p>
+          <p>2020-05-23 12:30:05</p>
+          <p>Game</p>
+        </div>
+        <div class="card-info-right">
+          <div class="card-info-comment">14</div>
+          <div class="card-info-view">400</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="home-info-board">
+
+    <div class="info-board-members">
+      <div class="info-board-title">
+        <h4>Recent Members</h4>
+      </div>
+      <div class="info-board-main">
+
+      <% 12.times do %>
+        <div class="members-card">
+          <div class="members-card-photo">
+            <%= image_tag("rails.png", :alt => "photo") %>
+          </div>
+          <div class="members-card-name">Alex</div>
+        </div>
+      <%end%>
+        
+        <div class="clear"></div>
+      </div>
+    </div>
+
+    <div class="info-board-topic">
+      <div class="info-board-title">
+        <h4>Topic</h4>
+      </div>
+      <div class="info-board-main">
+
+        <div class="topic-checkbox">
+          <%= check_box_tag 'AI' %>
+          <label for="AI">A.I.</label>
+        </div>
+
+        <div class="topic-checkbox">
+          <%= check_box_tag 'Rails' %>
+          <label for="Rails">Rails</label>
+        </div>
+
+        <div class="topic-checkbox">
+          <%= check_box_tag 'VR' %>
+          <label for="VR">V.R.</label>
+        </div>
+
+        <div class="topic-checkbox">
+          <%= check_box_tag 'RMIT' %>
+          <label for="RMIT">RMIT</label>
+        </div>
+
+        <div class="topic-checkbox">
+          <%= check_box_tag 'Game' %>
+          <label for="Game">Game</label>
+        </div>
+
+        <div class="clear"></div>
+      </div>
+    </div>
+
+    <div class="info-board-post">
+      <div class="info-board-title">
+        <h4>Post</h4>
+      </div>
+      <div class="info-board-main">
+
+
+        
+        <div class="clear"></div>
+      </div>
+    </div>
+
+    <div class="info-board-links">
+      <div class="info-board-title">
+        <h4>Links</h4>
+      </div>
+      <div class="info-board-main">
+        <a href="https://apidock.com/rails">Rails</a>
+        <a href="https://www.rmit.edu.au/">RMIT</a>
+        <a href="https://github.com/">Github</a>
+        <a href="https://heroku.com/">Heroku</a>
+        <a href="https://www.google.com.au/">Google</a>
+        <div class="clear"></div>
+      </div>
+    </div>
+
+  </div>
+  <div class="clear"></div>
+</body>
+
+
+
+
+
+
+
+<!--
 <div class="center jumbotron">
   <h1>Welcome to the Sample App</h1>
 
@@ -12,3 +157,4 @@
 
 <%= link_to image_tag("rails.png", alt: "Rails logo"),
             'http://rubyonrails.org/' %>
+-->
