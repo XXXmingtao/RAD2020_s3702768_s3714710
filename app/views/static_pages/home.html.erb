@@ -91,7 +91,7 @@
         <% @topics.each do |t| %>
         <div class="topic-checkbox">
           <%= check_box_tag t.topic %>
-          <%= label_tag t.topic %>
+          <%= label_tag t.topic,t.topic %>
         </div>
         <%end%>
 
