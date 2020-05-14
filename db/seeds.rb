@@ -20,3 +20,7 @@ User.create!(name: "Example User",
         password: password,
         password_confirmation: password)
 end
+
+["A.I.","V.R.","RMIT","Game","Rails","Go","Web","M.L.","Joke","Reat","Vue","Node","IOS","AWS"].each {|str|
+    Topic.create!(topic: str)
+}

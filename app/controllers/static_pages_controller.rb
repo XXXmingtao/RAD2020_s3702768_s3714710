@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
+    @topics = Topic.all
   end
 
   def help

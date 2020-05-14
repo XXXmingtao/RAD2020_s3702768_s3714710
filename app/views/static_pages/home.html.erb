@@ -88,30 +88,12 @@
       </div>
       <div class="info-board-main">
 
+        <% @topics.each do |t| %>
         <div class="topic-checkbox">
-          <%= check_box_tag 'AI' %>
-          <label for="AI">A.I.</label>
+          <%= check_box_tag t.topic %>
+          <%= label_tag t.topic %>
         </div>
-
-        <div class="topic-checkbox">
-          <%= check_box_tag 'Rails' %>
-          <label for="Rails">Rails</label>
-        </div>
-
-        <div class="topic-checkbox">
-          <%= check_box_tag 'VR' %>
-          <label for="VR">V.R.</label>
-        </div>
-
-        <div class="topic-checkbox">
-          <%= check_box_tag 'RMIT' %>
-          <label for="RMIT">RMIT</label>
-        </div>
-
-        <div class="topic-checkbox">
-          <%= check_box_tag 'Game' %>
-          <label for="Game">Game</label>
-        </div>
+        <%end%>
 
         <div class="clear"></div>
       </div>
