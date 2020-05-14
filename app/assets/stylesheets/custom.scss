@@ -54,50 +54,60 @@ h1, h2, h3, h4, h5, h6 {
 
 #logo {
     float: left;
-    margin-right: 10px;
     font-size: 1.7em;
     color: #fff;
-    text-transform: uppercase;
     letter-spacing: -1px;
     padding-top: 9px;
+    padding-left:60px;
     font-weight: bold;
+    width: 15%;
   }
+
+header .container{
+  background-color: rgb(57,61,72);
+  width: 100%;
+  padding-bottom: 0;
+}
   
-  #logo:hover {
-    color: #fff;
-    text-decoration: none;
-  }
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-right{
+  float: right;
+}
+
+.nav{
+  float: left;
+  width: 75%;
+}
+
+.navbar-button{
+  color:#fff !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+.navbar-right>li{
+  color:#fff !important;
+}
+
+.nav>li:hover{
+  background-color: rgb(9, 9, 9);
+}
 
   /* footer */
 
 footer {
-    margin-top: 45px;
-    padding-top: 5px;
-    border-top: 1px solid #eaeaea;
-    color: #777;
-  }
+  background-color: rgb(57,61,72);
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  color: white;
+  margin:0;
+}
   
-  footer a {
-    color: #555;
-  }
-  
-  footer a:hover {
-    color: #222;
-  }
-  
-  footer small {
-    float: left;
-  }
-  
-  footer ul {
-    float: right;
-    list-style: none;
-  }
-  
-  footer ul li {
-    float: left;
-    margin-left: 15px;
-  }
   /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
@@ -212,6 +222,7 @@ aside{
   width: 100%;
 }
 
+/* Post board */
 .home-post-board{
   width: calc(100% - 400px);
   float: left;
@@ -345,6 +356,8 @@ aside{
   padding:0 5px 20px 5px;
 }
 
+/* Recent Members */
+
 .members-card{
   float: left;
   margin: 0;
@@ -372,6 +385,8 @@ aside{
   margin: 5px;
 }
 
+/* Topic */
+
 .topic-checkbox{
   display: inline-block;
 }
@@ -394,6 +409,13 @@ aside{
   border: 2px solid #fa7501;
 }
 
+.topic-checkbox input[type="checkbox"]:hover + label {
+  color: #f07000; 
+  border: 2px solid #fa7501;
+}
+
+/* Links */
+
 .info-board-links a{
   border: 2px solid rgb(223,223,223);
   border-radius: 20px;
@@ -407,6 +429,41 @@ aside{
   color: #f07000; 
   border: 2px solid #fa7501;
   text-decoration: none;
+}
+
+/* Post */
+.info-board-post-card{
+  width: 100%;
+  padding:5px;
+}
+
+.info-board-post-title{
+  width: 85%;
+  background-color: red($color: red);
+  float: left;
+  text-overflow:ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.info-board-post-view{
+  width: 15%;
+  background-repeat: no-repeat;
+  background-position:left center;
+  padding-left: 20px;
+  background-image: url('view.png');
+  float: left;
+  margin: 0;
+}
+
+.info-board-post-card a{
+  color:black;
+}
+
+.info-board-post-card a:hover{
+  text-decoration: none;
+  color:#f07000;
 }
 
 .clear{

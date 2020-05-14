@@ -52,6 +52,8 @@
   </div>
   <div class="home-info-board">
 
+<!-- Recent Members -->
+
     <div class="info-board-members">
       <div class="info-board-title">
         <h4>Recent Members</h4>
@@ -70,6 +72,8 @@
         <div class="clear"></div>
       </div>
     </div>
+
+    <!-- Topic-->
 
     <div class="info-board-topic">
       <div class="info-board-title">
@@ -106,17 +110,33 @@
       </div>
     </div>
 
+<!-- Post -->
+
     <div class="info-board-post">
       <div class="info-board-title">
         <h4>Post</h4>
       </div>
       <div class="info-board-main">
 
+        <div class="info-board-post-card">
+          <a href="#"><div class="info-board-post-title">This is a VERY VERY VERY VERY VERY VERY VERY long post</div></a>
+          <div class="info-board-post-view">1788</div>
+          <div class="clear"></div>
+        </div>
 
+        <% 4.times do %>
+          <div class="info-board-post-card">
+            <a href="#"><div class="info-board-post-title">This is a test post</div></a>
+            <div class="info-board-post-view">1500</div>
+            <div class="clear"></div>
+          </div>
+        <%end%>
         
         <div class="clear"></div>
       </div>
     </div>
+
+<!-- Link -->
 
     <div class="info-board-links">
       <div class="info-board-title">
@@ -135,11 +155,6 @@
   </div>
   <div class="clear"></div>
 </body>
-
-
-
-
-
 
 
 <!--
