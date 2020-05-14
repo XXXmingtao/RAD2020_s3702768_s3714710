@@ -1,16 +1,21 @@
 <body class="home-bg">
+<form action="#" class="home-form" id="home-form" method="post">
   <div class="home-post-board">
-    <div class="post-board-recent">Recent Post</div>
-    <div class="post-board-selected">Selected Post</div>
-    <div class="post-board-setting">My Setting</div>
+    <input type="submit" class="post-board-recent" value = "Recent Post">
+    <input type="submit"  class="post-board-selected" value = "Selected Post">
+    <% if logged_in? %>
+      <a href="#" class="post-board-setting">My Setting</a>
+    <% end %>
     <div class="post-board-search">
+      <input type="text" class="search-input" name="search" placeholder="Search">
+      <input type="submit" class="search-button" value="">
     </div>
-    <div class="post-board-new">New Post</div>
+    <a href="#" class="post-board-new">New Post</a>
     <div class="clear"></div>
 
     <div class="home-post-card">
       <div class="post-card-image">
-        <%= image_tag("rails.png", :alt => "comment") %>
+         <a href="#"><%= image_tag("rails.png", :alt => "comment") %></a>
       </div>
       <div class="post-card-title">
         <a href="#"><h4 href="#">This is only a test post</h4></a>
@@ -31,7 +36,7 @@
 <!-- Delete in next stage -->
 <div class="home-post-card">
       <div class="post-card-image">
-        <%= image_tag("rails.png", :alt => "comment") %>
+        <a href="#"><%= image_tag("rails.png", :alt => "comment") %></a>
       </div>
       <div class="post-card-title">
         <a href="#"><h4 href="#">This is another test post!</h4></a>
@@ -61,12 +66,14 @@
       <div class="info-board-main">
 
       <% 12.times do %>
+      <a href="#">
         <div class="members-card">
           <div class="members-card-photo">
             <%= image_tag("rails.png", :alt => "photo") %>
           </div>
           <div class="members-card-name">Alex</div>
         </div>
+      </a>
       <%end%>
         
         <div class="clear"></div>
@@ -154,6 +161,7 @@
 
   </div>
   <div class="clear"></div>
+</form>
 </body>
 
 
