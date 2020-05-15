@@ -8,6 +8,7 @@
         <div class="card-info-comment"><%= @post.comment %></div>
         <div class="card-info-view"><%= @post.view %></div>
     </div>
+<div class = "clear"></div>
 </div>
 <div class = "post-info-bar">
     <div class = "info-bar-photo">
@@ -16,9 +17,10 @@
         <% end %>
     </div>
     <%= link_to User.find(@post.author_id) do %>
-        <%= User.find(@post.author_id).name %>
+        <p class="info-bar-name"><%= User.find(@post.author_id).name %></p>
     <%end%>
-    <p><%= @post.created_at %></p>
+    <p class="info-bar-time"><%= @post.created_at %></p>
+    <div class = "clear"></div>
 </div>
 <section class="post-text">
     <%= simple_format(@post.text) %>
