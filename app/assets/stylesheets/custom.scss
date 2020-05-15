@@ -325,6 +325,9 @@ aside{
   height: 50%;
   width: calc(100% - 80px);
   float: left;
+  text-overflow:ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .post-card-title h4{
