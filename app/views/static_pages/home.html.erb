@@ -27,7 +27,9 @@
         </div>
         <div class="post-card-info">
           <div class="card-info-left">
-            <p><%= User.find(post.author_id).name %></p>
+            <%= link_to User.find(post.author_id) do %>
+              <p><%= User.find(post.author_id).name %></p>
+            <% end %>
             <p><%= post.created_at %></p>
             <p><%= post.topic %></p>
           </div>
@@ -50,15 +52,15 @@
       </div>
       <div class="info-board-main">
 
-      <% 12.times do %>
-      <a href="#">
-        <div class="members-card">
-          <div class="members-card-photo">
-            <%= image_tag("rails.png", :alt => "photo") %>
+      <% @active_users.each do |user| %>
+        <%= link_to user do %>
+          <div class="members-card">
+            <div class="members-card-photo">
+              <%= gravatar_for user %>
+            </div>
+            <div class="members-card-name"><%= user.name %></div>
           </div>
-          <div class="members-card-name">Alex</div>
-        </div>
-      </a>
+        <%end%>
       <%end%>
         
         <div class="clear"></div>
@@ -74,10 +76,12 @@
       <div class="info-board-main">
 
         <% @topics.each do |t| %>
-        <div class="topic-checkbox">
-          <%= check_box_tag t.topic %>
-          <%= label_tag t.topic,t.topic %>
-        </div>
+          <% if t.topic != "News" %>
+            <div class="topic-checkbox">
+              <%= check_box_tag t.topic %>
+              <%= label_tag t.topic,t.topic %>
+            </div>
+          <%end%>
         <%end%>
 
         <div class="clear"></div>
