@@ -120,7 +120,7 @@ footer {
   line-height: 60px;
   text-align: center;
   color: white;
-  margin-top:30px;
+  /* margin-top:30px; */
 }
   
   /* mixins, variables, etc. */
@@ -147,7 +147,9 @@ $gray-medium-light: #eaeaea;
 
 /*sidebar*/
 aside{
-  section.user_info{margin-top:20px;
+  section.user_info{
+    margin-top:20px;
+    text-align: left;
   }
   section{
     padding:10px 0;
@@ -162,6 +164,8 @@ aside{
       line-height:1;
     }
     h1{
+      border-style: solid;
+      border-width: 3px;
       font-size:1.4em;
       text-align:left;
       letter-spacing:-1px;
@@ -170,14 +174,95 @@ aside{
     }
   }
 
+  /* Mingtao Liu css start line*/
+
+  i {
+    margin: 5px;
+  }
+
+  .userinfo {
+    text-align: center;
+  }
+
+  .map-joinTime {
+    text-align: center;
+}
+
+  .profile {
+    bottom: 0;
+    margin-top: 2em;
+    width: 100%;
+   /* border-style: solid;
+    border-width: 1px; */
+    background-color: #E0E0E0;
+  }
+
+  .post-comment-container {
+    /* border-style: solid;
+    border-width: 1px; */
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .panel-default {
+    display: inline-block;
+    width: 45em;
+    height: 30em;
+    margin-right: 1em;
+    margin-top: 1em;
+    margin-bottom: 3em;
+    margin-left: 2em;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+
+  .panel-heading {
+    text-align: left;
+  }
+
+  .profile .container .panel-body {
+    height: 100%;
+  }
+
   .gravatar{
-    float:left;
+    
     margin-right:10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    border-style: solid;
+    border-width: 3px;
+  }
+
+  .gravatarhead {
+    margin-top: 5px;
+    width: 40px;
+    border-radius: 40px;
   }
   
   .gravatar_edit{
     margin-top:15px;
   }
+
+  .usericon {
+    margin-top: 3em;
+    text-align: center;
+  }
+
+  .panel-heading a:hover{
+    color: skyblue;
+  }
+
+  .profile-bg {
+    width: 100%;
+  }
+
+  .profile-bg .container {
+    width: 100%;
+  }
+
+  /* Mingtao Liu css finishl-line*/
+
 
   /*forms*/
   input,textarea,select,.uneditable-input{
@@ -508,4 +593,7 @@ aside{
 .clear{
   clear: both;
 }
+
+/* user icon display circle */
+
 

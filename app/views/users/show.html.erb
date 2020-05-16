@@ -1,11 +1,30 @@
+<body class="profile-bg">
 <% provide(:title, @user.name) %>
 <div class="row">
-    <aside class="col-md-4">
-        <section class="user_info">
-            <h1>
-                <%= gravatar_for @user %>
+        <div class="usericon">
+            <%= gravatar_for @user %>
+        </div>
+            <div class="userinfo">
+            <h4>
                 <%= @user.name %>
-            </h1>
-        </section>
-    </aside>
+            </h4>
+            </div>
+            <div class="map-joinTime">
+                <i class="fa fa-clock-o" style="font-size:10px"> <span>2020-05-14</span></i>
+                <i class="fa fa-map-marker" style="font-size:10px"><span>  81 A'beckett St</span></i>
+            </div>
 </div>
+
+<div class="profile">
+            <div class="post-comment-container">
+                <div class="panel panel-default">
+                <div class="panel-heading"><a href="#">Another  </a>Recent posts:</div>
+                <div class="panel-body">some page content will goes here</div>
+                </div>
+                <div class="panel panel-default">
+                <div class="panel-heading"><a href="#">Another  </a>Rcent comments:</div>
+                <div class="panel-body">some page content will goes here</div>
+                </div>
+            </div>
+</div>
+</body>

@@ -15,8 +15,11 @@
         </li>
 
         <% if logged_in? %>
+        
           <li class="navbar-right">
+          
             <%= link_to"Log out", logout_path,method: :delete, class:"navbar-button" %>
+
           </li>
           <li class="dropdown navbar-right">
             <a href="#" class="dropdown-toggle navbar-button" data-toggle="dropdown">
@@ -30,6 +33,7 @@
         <% else %>
           <li class="navbar-right"><%= link_to "Sign up", signup_path, class:"navbar-button" %></li>
           <li class="navbar-right"><%= link_to "Log in", login_path, class:"navbar-button" %></li>
+          
         <% end %>
           
 

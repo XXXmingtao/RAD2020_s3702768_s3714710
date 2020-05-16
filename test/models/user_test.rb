@@ -10,6 +10,17 @@ class UserTest<ActiveSupport::TestCase
         assert @user.valid?
     end
 
+    test "password should not contain special character" do
+        @user.password="mingtao!@#"
+        assert_not @user.valid?
+    end
+
+    test "password should too short" do
+        @user.password="ming"
+        assert_not @user.valid?
+    end
+
+
     test "name should be present" do
         @user.name="     "
         assert_not@user.valid?
