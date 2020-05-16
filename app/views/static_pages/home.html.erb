@@ -1,5 +1,5 @@
 <body class="home-bg">
-<form action="#" class="home-form" id="home-form" method="post">
+<form action="" class="home-form" id="home-form" method="post">
   <div class="home-post-board">
     <input type="submit" class="post-board-recent" value = "Recent Post">
     <input type="submit"  class="post-board-selected" value = "Selected Post">
@@ -13,46 +13,33 @@
     <a href="#" class="post-board-new">New Post</a>
     <div class="clear"></div>
 
-    <div class="home-post-card">
-      <div class="post-card-image">
-         <a href="#"><%= image_tag("rails.png", :alt => "comment") %></a>
-      </div>
-      <div class="post-card-title">
-        <a href="#"><h4 href="#">This is only a test post</h4></a>
-      </div>
-      <div class="post-card-info">
-        <div class="card-info-left">
-          <p>Jack</p>
-          <p>2020-05-22 03:23:48</p>
-          <p>A.I.</p>
+    <% @posts.each do |post| %>
+      <div class="home-post-card">
+        <div class="post-card-image">
+          <%= link_to User.find(post.author_id) do %>
+            <%= gravatar_for User.find(post.author_id) %>
+          <% end %>
         </div>
-        <div class="card-info-right">
-          <div class="card-info-comment">36</div>
-          <div class="card-info-view">685</div>
+        <div class="post-card-title">
+          <%= link_to post do %>
+            <h4><%= post.title %></h4> 
+          <% end %>
         </div>
-      </div>
-    </div>
-
-<!-- Delete in next stage -->
-<div class="home-post-card">
-      <div class="post-card-image">
-        <a href="#"><%= image_tag("rails.png", :alt => "comment") %></a>
-      </div>
-      <div class="post-card-title">
-        <a href="#"><h4 href="#">This is another test post!</h4></a>
-      </div>
-      <div class="post-card-info">
-        <div class="card-info-left">
-          <p>Robin</p>
-          <p>2020-05-23 12:30:05</p>
-          <p>Game</p>
-        </div>
-        <div class="card-info-right">
-          <div class="card-info-comment">14</div>
-          <div class="card-info-view">400</div>
+        <div class="post-card-info">
+          <div class="card-info-left">
+            <%= link_to User.find(post.author_id) do %>
+              <p><%= User.find(post.author_id).name %></p>
+            <% end %>
+            <p><%= post.created_at %></p>
+            <p><%= post.topic %></p>
+          </div>
+          <div class="card-info-right">
+            <div class="card-info-comment"><%= post.comment %></div>
+            <div class="card-info-view"><%= post.view %></div>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
 
   </div>
   <div class="home-info-board">
@@ -65,15 +52,15 @@
       </div>
       <div class="info-board-main">
 
-      <% 12.times do %>
-      <a href="#">
-        <div class="members-card">
-          <div class="members-card-photo">
-            <%= image_tag("rails.png", :alt => "photo") %>
+      <% @active_users.each do |user| %>
+        <%= link_to user do %>
+          <div class="members-card">
+            <div class="members-card-photo">
+              <%= gravatar_for user %>
+            </div>
+            <div class="members-card-name"><%= user.name %></div>
           </div>
-          <div class="members-card-name">Alex</div>
-        </div>
-      </a>
+        <%end%>
       <%end%>
         
         <div class="clear"></div>
@@ -88,30 +75,14 @@
       </div>
       <div class="info-board-main">
 
-        <div class="topic-checkbox">
-          <%= check_box_tag 'AI' %>
-          <label for="AI">A.I.</label>
-        </div>
-
-        <div class="topic-checkbox">
-          <%= check_box_tag 'Rails' %>
-          <label for="Rails">Rails</label>
-        </div>
-
-        <div class="topic-checkbox">
-          <%= check_box_tag 'VR' %>
-          <label for="VR">V.R.</label>
-        </div>
-
-        <div class="topic-checkbox">
-          <%= check_box_tag 'RMIT' %>
-          <label for="RMIT">RMIT</label>
-        </div>
-
-        <div class="topic-checkbox">
-          <%= check_box_tag 'Game' %>
-          <label for="Game">Game</label>
-        </div>
+        <% @topics.each do |t| %>
+          <% if t.topic != "News" %>
+            <div class="topic-checkbox">
+              <%= check_box_tag t.topic %>
+              <%= label_tag t.topic,t.topic %>
+            </div>
+          <%end%>
+        <%end%>
 
         <div class="clear"></div>
       </div>
@@ -125,20 +96,15 @@
       </div>
       <div class="info-board-main">
 
+      <% @toolbar_posts.each do |tb_post| %>
         <div class="info-board-post-card">
-          <a href="#"><div class="info-board-post-title">This is a VERY VERY VERY VERY VERY VERY VERY long post</div></a>
-          <div class="info-board-post-view">1788</div>
+        <%= link_to tb_post do %>
+            <div class="info-board-post-title"><%= tb_post.title %></div>
+        <% end %>
+        <div class="info-board-post-view"><%= tb_post.view %></div>
           <div class="clear"></div>
         </div>
-
-        <% 4.times do %>
-          <div class="info-board-post-card">
-            <a href="#"><div class="info-board-post-title">This is a test post</div></a>
-            <div class="info-board-post-view">1500</div>
-            <div class="clear"></div>
-          </div>
-        <%end%>
-        
+      <%end%>
         <div class="clear"></div>
       </div>
     </div>

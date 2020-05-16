@@ -38,6 +38,10 @@ a:hover{
   text-decoration: none;
 }
 
+.clear{
+  clear: both;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -410,6 +414,9 @@ aside{
   height: 50%;
   width: calc(100% - 80px);
   float: left;
+  text-overflow:ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .post-card-title h4{
@@ -433,6 +440,10 @@ aside{
   height: 40px;
   line-height: 40px;
   margin: 0 20px 0 20px;
+}
+
+.card-info-left a:hover{
+  color:rgb(253,87,35);
 }
 
 .card-info-right{
@@ -590,10 +601,69 @@ aside{
   color:#f07000;
 }
 
-.clear{
-  clear: both;
+/* Post Page */
+
+.post-status-bar{
+  position: relative;
+  height: 40px;
 }
 
-/* user icon display circle */
+.post-topic{
+  background-color: rgb(153,153,153);
+  color: white;
+  padding:0 10px 0 10px;
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+  left:0;
+}
+
+.post-comment-view{
+  float: right;
+}
+
+.post-info-bar{
+  background-color:rgb(238,238,238);
+  padding: 10px 5px 10px 5px;
+  margin:10px 0 20px 0;
+}
+
+.info-bar-photo{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+}
+
+.info-bar-photo img{
+  height: 100%;
+}
+
+.post-info-bar p{
+  float:left;
+  height: 50px;
+  line-height: 50px;
+}
+
+.info-bar-name{
+  margin:0 0 0 10px;
+  color:rgb(20, 136, 224);
+}
+
+.info-bar-name:hover{
+  color:rgb(30,158,255);
+}
+
+.info-bar-time{
+  margin:0 0 0 40px;
+  color:rgb(145, 145, 145);
+}
+
+
+
+
+
+
 
 
