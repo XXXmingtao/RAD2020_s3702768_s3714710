@@ -2,9 +2,15 @@
 @import "bootstrap";
 
 /* universal */
+html{
+  height: 100%;
+}
 
 body {
   padding-top: 60px;
+  padding-bottom: 60px;
+  min-height:100%;
+  position:relative;
 }
 
 section {
@@ -86,6 +92,7 @@ header .container{
   background-color: rgb(57,61,72);
   width: 100%;
   padding-bottom: 0;
+  height: auto !important;
 }
   
 #logo:hover {
@@ -116,18 +123,21 @@ header .container{
   background-color: rgb(9, 9, 9);
 }
 
-  /* footer */
+/* footer */
 
 footer {
   background-color: rgb(57,61,72);
   height: 60px;
+  width: 100%;
   line-height: 60px;
   text-align: center;
   color: white;
-  /* margin-top:30px; */
+  margin-top:30px;
+  position: absolute;
+  bottom: 0;
 }
   
-  /* mixins, variables, etc. */
+/* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
 
@@ -178,7 +188,7 @@ aside{
     }
   }
 
-  /* Mingtao Liu css start line*/
+  /* Profile Page*/
 
   i {
     margin: 5px;
@@ -228,14 +238,18 @@ aside{
     height: 100%;
   }
 
-  .gravatar{
-    
-    margin-right:10px;
+  .usericon{
     width: 100px;
     height: 100px;
-    border-radius: 100px;
-    border-style: solid;
-    border-width: 3px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin:0 auto;
+    margin-top:3em;
+    margin-bottom:1em;
+  }
+
+  .usericon img{
+      height: 100%;
   }
 
   .gravatarhead {
@@ -246,11 +260,6 @@ aside{
   
   .gravatar_edit{
     margin-top:15px;
-  }
-
-  .usericon {
-    margin-top: 3em;
-    text-align: center;
   }
 
   .panel-heading a:hover{
