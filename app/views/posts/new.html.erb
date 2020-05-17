@@ -1,2 +1,29 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<%provide(:title,'New post')%>
+<p class="post-form-title">Post</p>
+    <div class="new-post-form">
+        <%= form_for(@post,url: newpost_path) do |f| %>
+        <%= render 'shared/post_error_messages' %>
+
+            <%= f.hidden_field :author_id, value: current_user.id %>
+
+            <div class = "new-post-row">
+                <%= f.label :topic %>
+                <%= f.select:topic, Topic.all.collect {|t| [ t.topic, t.topic ] }, { :prompt => '===== Select =====' } %>
+                <div class="clear"></div>
+            </div>
+
+            <div class = "new-post-row">
+                <%= f.label :title %>
+                <%= f.text_field :title, placeholder: "Enter post title here" %>
+                <div class="clear"></div>
+            </div>
+
+            <%= f.text_area :text, cols: 20, rows: 25, placeholder: "Enter your post here" %>
+
+            <div class = "new-post-row">
+                <%= f.submit"Post", class: "post-form-submit" %>
+                <%= link_to "Cancel", root_path, class: "post-form-cancel" %>
+                <div class="clear"></div>
+            </div>
+        <% end %>
+    </div>

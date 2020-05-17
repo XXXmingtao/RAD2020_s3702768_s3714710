@@ -669,7 +669,72 @@ aside{
   color:rgb(145, 145, 145);
 }
 
+/* New Post form */
+.post-form-title{
+  width: 100%;
+  background-color: rgb(241, 241, 241);
+  border-left: 4px solid rgb(14,149,135);
+  padding: 10px 15px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
 
+.new-post-row{
+  position: relative;
+  margin-bottom: 20px;
+  height: 30px;
+}
+
+.new-post-row label{
+  width: 10%;
+  margin: 0;
+  background-color: rgb(247,247,247);
+  border: 1px solid #bbb;
+  font-weight: normal;
+  text-align: center;
+  float: left;
+  height: 100%;
+  line-height: 30px;
+}
+
+#post_topic, #post_title{
+  margin:0 0 0 -1px;
+  padding:5px;
+  height: 100% !important;
+}
+
+#post_topic{
+  width: 20%;
+}
+
+#post_topic option:first-child{
+  color:rgb(156,156,156);
+}
+
+#post_title{
+  width: 90%;
+}
+
+#post_text{
+  padding:5px 10px;
+  margin-bottom: 40px;
+}
+
+.post-form-submit, .post-form-cancel{
+  width: 10% !important;
+  height: 100% !important;
+  line-height: 30px;
+  border: 1px solid #bbb;
+  float: left;
+  text-align: center;
+  margin: 20px 15px 40px 0;
+  box-sizing: content-box;
+}
+
+.post-form-submit{
+  background-color:rgb(14,149,135);
+  color:white;
+}
 
 
 

@@ -10,7 +10,7 @@
       <input type="text" class="search-input" name="search" placeholder="Search">
       <input type="submit" class="search-button" value="">
     </div>
-    <a href="/posts/new" class="post-board-new">New Post</a>
+    <%= link_to "New Post", newpost_path, class:"post-board-new" %>
     <div class="clear"></div>
 
     <% @posts.each do |post| %>

@@ -8,7 +8,7 @@ class StaticPagesController < ApplicationController
     @active_users = Array.new
     @posts.each do |post|
       @active_users.push(User.find(post.author_id)) unless @active_users.include?(User.find(post.author_id))
-      end
+    end
   end
 
   def help
