@@ -7,7 +7,7 @@
 
             <div class = "new-post-row">
                 <%= f.label :topic %>
-                <%= f.select:topic, Topic.all.collect {|t| [ t.topic, t.topic ] }, { :prompt => '===== Select =====' },class:'form-control' %>
+                <%= f.select:topic, @topics.collect {|t| [ t.topic, t.topic ] },:include_blank => "===== Select =====",class:'form-control' %>
                 <div class="clear"></div>
             </div>
 

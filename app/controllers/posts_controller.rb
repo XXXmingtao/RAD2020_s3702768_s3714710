@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def new
     @post=Post.new
-    @topics=Topic.all
+    @topics = get_topics
   end
 
   def show
@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    @topics = get_topics
     @post=Post.new(post_params)
     @post.topic="News" if @post.topic==""
     @post.comment = @post.view = 0
@@ -36,4 +37,13 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :topic, :text)
     end
+
+    def get_topics
+      topics = Array.new
+      Topic.all.each do |topic|
+        topics.push(topic) unless topic.topic=="News"
+      end
+      return topics
+    end
+
 end
