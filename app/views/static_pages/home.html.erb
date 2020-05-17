@@ -30,7 +30,7 @@
             <%= link_to User.find(post.author_id) do %>
               <p><%= User.find(post.author_id).name %></p>
             <% end %>
-            <p><%= post.created_at %></p>
+            <p><%= post.created_at.in_time_zone("Melbourne").strftime("%Y-%m-%d %T") %></p>
             <p><%= post.topic %></p>
           </div>
           <div class="card-info-right">
