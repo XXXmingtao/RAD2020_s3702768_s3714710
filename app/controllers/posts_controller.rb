@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   def show
     @post=Post.find(params[:id])
+    @post.update_column(:view, @post.view+=1)
   end
 
   def create
