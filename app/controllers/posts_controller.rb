@@ -12,6 +12,10 @@ class PostsController < ApplicationController
 
   def create
     @post=Post.new(post_params)
+    @post.topic="News" if @post.topic==""
+    @post.comment = @post.view = 0
+    @post.author_id = current_user.id
+
     if @post.save
       flash[:success]="New post has been published!"
       redirect_to @post
@@ -30,6 +34,6 @@ class PostsController < ApplicationController
   private
   
     def post_params
-      params.require(:post).permit(:title, :author_id, :topic, :text)
+      params.require(:post).permit(:title, :topic, :text)
     end
 end

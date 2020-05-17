@@ -693,14 +693,15 @@ aside{
   font-weight: normal;
   text-align: center;
   float: left;
-  height: 100%;
+  height: 30px;
   line-height: 30px;
 }
 
 #post_topic, #post_title{
   margin:0 0 0 -1px;
   padding:5px;
-  height: 100% !important;
+  height: 30px !important;
+  border-radius: 0 !important;
 }
 
 #post_topic{
