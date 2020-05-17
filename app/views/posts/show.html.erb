@@ -1,27 +1,33 @@
-<% provide(:title, @post.title) %>
-<div class = "post-title">
-    <h3><%= @post.title %></h3>
-</div>
-<div class = "post-status-bar">
-    <div class = "post-topic"><%= @post.topic %></div>
-    <div class = "post-comment-view">
-        <div class="card-info-comment"><%= @post.comment %></div>
-        <div class="card-info-view"><%= @post.view %></div>
+<body class="home-bg">
+<div class = "post-container">
+    <% provide(:title, @post.title) %>
+    <div class = "post-title">
+        <h3><%= @post.title %></h3>
     </div>
-<div class = "clear"></div>
-</div>
-<div class = "post-info-bar">
-    <div class = "info-bar-photo">
-        <%= link_to User.find(@post.author_id) do %>
-            <%= gravatar_for User.find(@post.author_id) %>
-        <% end %>
-    </div>
-    <%= link_to User.find(@post.author_id) do %>
-        <p class="info-bar-name"><%= User.find(@post.author_id).name %></p>
-    <%end%>
-    <p class="info-bar-time"><%= @post.created_at.in_time_zone("Melbourne").strftime("%Y-%m-%d %T") %></p>
+    <div class = "post-status-bar">
+        <div class = "post-topic"><%= @post.topic %></div>
+        <div class = "post-comment-view">
+            <div class="card-info-comment"><%= @post.comment %></div>
+            <div class="card-info-view"><%= @post.view %></div>
+        </div>
     <div class = "clear"></div>
+    </div>
+    <div class = "post-info-bar">
+        <div class = "info-bar-photo">
+            <%= link_to User.find(@post.author_id) do %>
+                <%= gravatar_for User.find(@post.author_id) %>
+            <% end %>
+        </div>
+        <%= link_to User.find(@post.author_id) do %>
+            <p class="info-bar-name"><%= User.find(@post.author_id).name %></p>
+        <%end%>
+        <p class="info-bar-time"><%= @post.created_at.in_time_zone("Melbourne").strftime("%Y-%m-%d %T") %></p>
+        <div class = "clear"></div>
+    </div>
+    <section class="post-text">
+        <%= simple_format(@post.text) %>
+    </section>
 </div>
-<section class="post-text">
-    <%= simple_format(@post.text) %>
-</section>
+
+<%= render 'layouts/right_side_bar' %>
+</body>

@@ -9,6 +9,10 @@ class PostsController < ApplicationController
   def show
     @post=Post.find(params[:id])
     @post.update_column(:view, @post.view+=1)
+    @active_users = Array.new
+    Post.order('created_at DESC').each do |post|
+      @active_users.push(User.find(post.author_id)) unless @active_users.include?(User.find(post.author_id))
+    end
   end
 
   def create
