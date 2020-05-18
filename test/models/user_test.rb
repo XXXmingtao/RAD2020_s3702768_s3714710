@@ -15,7 +15,7 @@ class UserTest<ActiveSupport::TestCase
         assert_not @user.valid?
     end
 
-    test "password should too short" do
+    test "password should not too short" do
         @user.password="ming"
         assert_not @user.valid?
     end

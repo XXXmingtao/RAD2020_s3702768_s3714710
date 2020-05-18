@@ -4,25 +4,40 @@
     <div class="col-md-6 col-md-offset-3">
         <%= form_for(@user,url: signup_path) do |f| %>
         <%= render 'shared/error_messages' %>
+            <div class="new-user-inputs">
             <%= f.label :name %>
             <%= f.text_field :name, class:'form-control', placeholder: "Name will be displayed to others" %>
-
+            </div>
+            
+            <div class="new-user-inputs">
             <%= f.label :email %>
             <%= f.email_field :email, class:'form-control', placeholder: "Your Email" %>
+            </div>
 
+            <div class="new-user-inputs">
             <%= f.label :password %>
             <%= f.password_field :password, class:'form-control', placeholder:"8-20 characters" %>
+            </div>
 
+            <div class="new-user-inputs">
             <%= f.label :password_confirmation,"Confirmation" %>
             <%= f.password_field :password_confirmation, class:'form-control', placeholder:"Double check your pass" %>
+            </div>
 
+            <div class="new-user-inputs">
             <%= f.label :phone %>
-            <span class="input-group-text" id="inutGroupPrepend2">+61</span>
             <%= f.phone_field :phone, class:'form-control', placeholder:"Your Mobile Phone" %>
-            
+            </div>
 
+            <div class="new-user-button">
             <%= f.submit"Create my account", class: "btn btn-primary" %>
-            <p><%= link_to "Already a user?", login_path %></p>
+            </div>
+
+            <div class="link-to-login">
+            <%= link_to "Already a user?", login_path, class: "link-to-login" %>
+            </div>
         <% end %>
+
+        <p ></p>
     </div>
 </div>
