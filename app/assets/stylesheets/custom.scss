@@ -344,11 +344,26 @@ aside{
   float: left;
 }
 
-.post-board-recent p, .post-board-selected p, .post-board-setting p, .post-board-search p, .post-board-new p{
-  margin:0;
+/* Display radios */
+
+.post-board-radio{
+  float: left;
 }
 
-.post-board-recent, .post-board-selected, .post-board-setting, .post-board-search, .post-board-new{
+.post-board-radio span{
+  cursor:pointer;
+}
+
+.post-board-radio input[type='radio']{
+  position: absolute;
+  clip:rect(0,0,0,0);
+}
+
+.post-board-radio input[type="radio"]:checked + span {
+  color: rgb(253,87,35); 
+}
+
+.post-board-radio span, .post-board-setting, .post-board-search, .post-board-new{
   margin: 20px 0 20px 2px;
   height: 35px;
   line-height:35px;
@@ -356,16 +371,16 @@ aside{
   padding:0;
 }
 
-.post-board-recent, .post-board-selected, .post-board-setting, .post-board-search{
+.post-board-radio span, .post-board-setting, .post-board-search{
   background-color: white;
 }
 
-.post-board-recent, .post-board-selected, .post-board-setting, .post-board-search{
+.post-board-radio span, .post-board-setting, .post-board-search{
   float: left;
   width: 120px;
 }
 
-.post-board-recent:hover, .post-board-selected:hover, .post-board-setting:hover{
+.post-board-radio span:hover, .post-board-setting:hover{
   color:rgb(253,87,35);
 }
 
