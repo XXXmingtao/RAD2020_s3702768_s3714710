@@ -1,3 +1,193 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/* Home Page */
+.home-bg{
+    background-color: rgb(238,238,238);
+  }
+  .home-bg .container{
+    width: 100%;
+  }
+  
+  /* Post board */
+  .home-post-board{
+    width: calc(100% - 400px);
+    float: left;
+  }
+  
+  /* Display radios */
+  
+  .post-board-radio{
+    float: left;
+  }
+  
+  .post-board-radio span{
+    cursor:pointer;
+  }
+  
+  .post-board-radio input[type='radio']{
+    position: absolute;
+    clip:rect(0,0,0,0);
+  }
+  
+  .post-board-radio input[type="radio"]:checked + span {
+    color: rgb(253,87,35); 
+  }
+  
+  .post-board-radio span, .post-board-setting, .post-board-search, .post-board-new{
+    margin: 20px 0 20px 2px;
+    height: 35px;
+    line-height:35px;
+    text-align: center;
+    padding:0;
+  }
+  
+  .post-board-radio span, .post-board-setting, .post-board-search{
+    background-color: white;
+  }
+  
+  .post-board-radio span, .post-board-setting, .post-board-search{
+    float: left;
+    width: 120px;
+  }
+  
+  .post-board-radio span:hover, .post-board-setting:hover{
+    color:rgb(253,87,35);
+  }
+  
+  .post-board-search{
+    margin-left: 20px;
+    width: 250px;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .search-input{
+    border:none;
+    padding:0 0 0 5px;
+    margin:0;
+  }
+  
+  .search-button{
+    border:none;
+    position: absolute;
+    right:0;
+    width: 15%;
+    padding: 0;
+    background: url("loupe.png") no-repeat center center;
+  }
+  
+  .post-board-new{
+    float: right;
+    background-color: rgb(14,149,135);
+    width: 100px;
+    color: white;
+  }
+  
+  .post-board-new:hover{
+    background-color: rgb(10, 109, 99);
+    color: white;
+  }
+  
+  .home-post-card{
+    background-color: white;
+    width: 100%;
+    height: 80px;
+    margin-bottom: 2px;
+    position: relative;
+  }
+  
+  .post-card-image img{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    left:15px;
+  }
+  
+  .post-card-title, .post-card-info{
+    margin-left: 80px;
+    height: 50%;
+    width: calc(100% - 80px);
+    float: left;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .post-card-title h4{
+    line-height: 40px;
+    bottom: 0;
+    color: black;
+    text-decoration: none;
+  }
+  
+  .post-card-title :hover{
+    color:rgb(253,87,35);
+    text-decoration: none;
+  }
+  
+  .card-info-left{
+    float: left;
+  }
+  
+  .card-info-left p{
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 20px 0 20px;
+  }
+  
+  .card-info-left a:hover{
+    color:rgb(253,87,35);
+  }
+  
+  .card-info-right{
+    float: right;
+  }
+  
+  .card-info-comment, .card-info-view{
+    float: left;
+    background-repeat: no-repeat;
+    background-position:left center;
+    padding-left: 30px;
+    margin-right: 30px;
+    height: 40px;
+    line-height: 40px;
+  }
+  
+  .card-info-comment{
+    background-image: url('comment.png');
+  }
+  
+  .card-info-view{
+    background-image: url('view.png');
+    background-repeat: no-repeat;
+  }
+  
+  .home-info-board{
+    width: 380px;
+    float: right;
+    margin-top: 20px;
+  }
+  
+  .info-board-members, .info-board-topic, .info-board-post, .info-board-links{
+    width: 100%;
+    padding-top:10px;
+    background-color: white;
+    margin-bottom: 20px;
+  }
+  
+  .info-board-title{
+    background-color: rgb(248, 248, 248);
+    border-left: 5px solid rgb(246,55,85);
+    padding: 1px 0 1px 20px;
+    margin: 10px 0 20px 0;
+  }
+  
+  .info-board-main{
+    width: 100%;
+    padding:0 5px 20px 5px;
+  }
