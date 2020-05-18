@@ -15,7 +15,7 @@ User.create!(name: "Example User",
 99.times do |n|
     name = Faker::Name.name
     email = "example-#{n+1}@railstutorial.org"
-    password = "passworddd"
+    password = "password"
     phone = rand.to_s[2..11]
     User.create!(name: name,
         email: email,

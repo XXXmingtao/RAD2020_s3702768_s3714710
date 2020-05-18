@@ -1,3 +1,64 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/* Sign Up Page */
+
+.login-inputs{
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 30px;
+  }
+
+  .login-inputs label{
+    width: 20% !important;
+    margin: 0;
+    font-weight: normal;
+    text-align: center;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    text-align: left;
+  }
+
+  .login-inputs input, .remember-me-div{
+    margin:0 0 0 -1px !important;
+    padding:5px;
+    height: 30px !important;
+    border-radius: 0 !important;
+    width: 80% !important;
+  }
+
+  .remember-me-div{
+    float: right;
+    padding: 0;
+  }
+
+  .remember-me-div>label{
+      margin:0 !important;
+      float: left;
+  }
+
+  .forgot-btn{
+      float: right;
+  }
+
+  .forgot-btn a{
+    color: #0269c9;
+  }
+
+  .login-button .btn-primary{
+    float: right;
+    width: 80%;
+    background-color: #0e9688;
+  }
+
+  .login-link a:hover, .forgot-btn:hover {
+    text-decoration: underline;
+  }
+
+  .login-link .link-to-login {
+    margin-top: 1em;
+    text-align: right;
+    color: #0269c9;
+  }
