@@ -4,6 +4,7 @@
 /* universal */
 html{
   height: 100%;
+  overflow-x:hidden;
 }
 
 body {
@@ -86,17 +87,17 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.7em;
     color: #fff;
     letter-spacing: -1px;
-    padding-top: 9px;
-    padding-left:60px;
     font-weight: bold;
-    width: 15%;
+    margin: 0 5%;
+    width: 10%;
+    height: 100% !important;
   }
 
 header{
   background-color: rgb(57,61,72) !important;
-  width: 100%;
   padding-bottom: 0;
-  height: auto !important;
+  height: 60px;
+  line-height: 60px;
 }
   
 #logo:hover {
@@ -105,26 +106,65 @@ header{
 }
 
 .navbar-right{
+  position: relative;
   float: right;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px 0;
+}
+
+.navbar-right img, .nav-gravatar img{
+  width: 50px;
+  height: 50px;
 }
 
 .nav{
   float: left;
-  width: 75%;
+  width: 80%;
+  padding-right: 5%;
 }
 
-.navbar-button{
+.navbar-button, .navbar-username{
   color:#fff !important;
-  padding-left: 20px !important;
-  padding-right: 20px !important;
+  height: 57px !important;
+  line-height: 60px !important;
+  padding:0 30px !important;
+  box-sizing: content-box;
 }
 
 .navbar-right>li{
   color:#fff !important;
 }
 
-.nav>li:hover{
-  background-color: rgb(9, 9, 9);
+.navbar-button:hover{
+  border-bottom: 3px solid rgb(253,87,35);
+}
+
+.nav-gravatar{
+  float: right !important;
+  width: 50px;
+  height: 50px;
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gravatar-circle{
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.nav-gravatar-toggle{
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  padding: 0 !important;
 }
 
 /* footer */
