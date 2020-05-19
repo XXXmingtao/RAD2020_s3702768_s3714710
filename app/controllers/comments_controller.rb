@@ -9,10 +9,12 @@ class CommentsController < ApplicationController
     @comment.post_id = params[:token]
     if @comment.save
       flash[:success]="New comment has been published!"
-      redirect_to request.referrer
+    elsif @comment.content==""
+      flash[:fail]="Comment can't be blank"
     else
-      render 'new'
+      flash[:fail]="Comment is too long (maximum is 200 characters)"
     end
+    redirect_to request.referrer
   end
 
   private

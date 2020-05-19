@@ -1,0 +1,5 @@
+<% Comment.all.each do |comment| %>
+    <% if comment.post_id == @post.id %>
+        <p><%= comment.content %></p>
+    <% end %>
+<% end %>
