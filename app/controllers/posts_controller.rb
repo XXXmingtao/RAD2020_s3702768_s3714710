@@ -16,6 +16,7 @@ class PostsController < ApplicationController
         @active_users.push(User.find_by_id(post.user_id)) unless @active_users.include?(User.find_by_id(post.user_id))
       end
     end
+    @comment=Comment.new
   end
 
   def create

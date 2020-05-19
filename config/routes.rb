@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'comments/new'
   get 'posts/new'
   get 'topics/new'
   get 'sessions/new'
@@ -14,6 +15,8 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/newpost', to: 'posts#new'
   post '/newpost', to: 'posts#create'
+  post '/posts/:token/comment', to: 'comments#create'
   resources :users
   resources :posts
+  resources :comments
 end

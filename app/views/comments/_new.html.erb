@@ -1,0 +1,11 @@
+<%= render 'shared/post_error_messages' %>
+        <%= form_for(@comment,url: "#{request.original_url}/comment") do |f| %>
+        
+            <%= f.text_area :content, cols: 20, rows: 25, placeholder: "Enter your post here",class:'form-control' %>
+            
+
+            <div class = "new-post-row">
+                <%= f.submit"Post", class: "post-form-submit" %>
+                <div class="clear"></div>
+            </div>
+        <% end %>
