@@ -14,13 +14,21 @@
     </div>
     <div class = "post-info-bar">
         <div class = "info-bar-photo">
-            <%= link_to User.find(@post.author_id) do %>
-                <%= gravatar_for User.find(@post.author_id) %>
+            <% if @user %>
+                <%= link_to @user do %>
+                    <%= gravatar_for @user %>
+                <% end %>
+            <% else %>
+                <%= gravatar_for @user %>
             <% end %>
         </div>
-        <%= link_to User.find(@post.author_id) do %>
-            <p class="info-bar-name"><%= User.find(@post.author_id).name %></p>
-        <%end%>
+        <% if @user %>
+            <%= link_to @user do %>
+                <p class="info-bar-name"><%= name_for @user %></p>
+            <%end%>
+        <% else %>
+            <p class="info-bar-name-deleted"><%= name_for @user %></p>
+        <% end %>
         <p class="info-bar-time"><%= @post.created_at.in_time_zone("Melbourne").strftime("%Y-%m-%d %T") %></p>
         <div class = "clear"></div>
     </div>

@@ -9,9 +9,12 @@ class PostsController < ApplicationController
   def show
     @post=Post.find(params[:id])
     @post.update_column(:view, @post.view+=1)
+    @user=User.find_by_id(@post.user_id)
     @active_users = Array.new
     Post.order('created_at DESC').each do |post|
-      @active_users.push(User.find(post.author_id)) unless @active_users.include?(User.find(post.author_id))
+      if User.find_by_id(post.user_id) != nil
+        @active_users.push(User.find_by_id(post.user_id)) unless @active_users.include?(User.find_by_id(post.user_id))
+      end
     end
   end
 
@@ -20,7 +23,7 @@ class PostsController < ApplicationController
     @post=Post.new(post_params)
     @post.topic="News" if @post.topic==""
     @post.comment = @post.view = 0
-    @post.author_id = current_user.id
+    @post.user_id = current_user.id
 
     if @post.save
       flash[:success]="New post has been published!"

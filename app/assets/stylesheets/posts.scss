@@ -46,6 +46,7 @@
   
   .info-bar-photo img{
     height: 100%;
+    width: 100%;
   }
   
   .post-info-bar p{
@@ -61,6 +62,10 @@
   
   .info-bar-name:hover{
     color:rgb(30,158,255);
+  }
+
+  .info-bar-name-deleted{
+    margin:0 0 0 10px;
   }
   
   .info-bar-time{

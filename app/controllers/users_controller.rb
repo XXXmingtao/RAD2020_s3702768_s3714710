@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user=User.find(params[:id])
+    @user=User.find_by_id(params[:id])
+    render 'user_not_found' if @user.nil?
   end
     
   def new
@@ -30,7 +31,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user=User.find(params[:id])
   end
 
   def update
@@ -64,8 +65,12 @@ class UsersController < ApplicationController
     end
 
     def correct_user
-      @user=User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user)
+      @user=User.find_by_id(params[:id])
+      if @user.nil?
+        render 'user_not_found'
+      else
+        redirect_to(root_url) unless current_user?(@user)
+      end
     end
 
     def admin_user

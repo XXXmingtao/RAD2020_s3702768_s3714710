@@ -12,6 +12,7 @@ class User < ApplicationRecord
     VALID_PASS_REGEX = /[a-zA-Z0-9]{8,20}/
     validates :password, presence: true, length: { minimum: 6 }, format: { with: VALID_PASS_REGEX }, allow_nil:true
     validates :address, presence:true, length: {maximum: 45 }, allow_nil:true
+    has_many :posts
 
     def User.digest(string)
         cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

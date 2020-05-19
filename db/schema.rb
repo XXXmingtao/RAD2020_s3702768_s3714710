@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 2020_05_18_043602) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
-    t.integer "author_id"
     t.string "topic"
     t.text "text"
     t.integer "view"
     t.integer "comment"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -20,11 +20,11 @@
 
     <% @posts.each do |post| %>
       <%= content_tag :div, class: "home-post-card", id:"post-card-#{post.topic}" do %>
-        <div class="post-card-image">
-          <%= link_to User.find(post.author_id) do %>
-            <%= gravatar_for User.find(post.author_id) %>
+        <%= content_tag :div, class:"post-card-image" do%>
+          <%= link_to User.find_by_id(post.user_id) do %>
+            <%= gravatar_for User.find_by_id(post.user_id) %>
           <% end %>
-        </div>
+        <% end %>
         <div class="post-card-title">
           <%= link_to post do %>
             <h4><%= post.title %></h4> 
@@ -32,8 +32,8 @@
         </div>
         <div class="post-card-info">
           <div class="card-info-left">
-            <%= link_to User.find(post.author_id) do %>
-              <p><%= User.find(post.author_id).name %></p>
+            <%= link_to User.find_by_id(post.user_id) do %>
+              <p><%= name_for User.find_by_id(post.user_id) %></p>
             <% end %>
             <p><%= post.created_at.in_time_zone("Melbourne").strftime("%Y-%m-%d %T") %></p>
             <p><%= post.topic %></p>
