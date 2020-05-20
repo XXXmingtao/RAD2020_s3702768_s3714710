@@ -87,7 +87,7 @@ Post.create!(
     Xbox Game Pass gives subscribers access to a huge library of games on Xbox One or PC for $10 a month. A Game Pass Ultimate Subscription allows access to both the PC and Xbox One game libraries, along with an Xbox Live Gold subscription for online play, for $15 a month.",
     view:960,
     comment:145,
-    user_id:2,
+    user_id:2
 )
 
 #usa, 2020. Support Of Ruby 2.4 Has Ended. [online] Ruby-lang.org. Available at: <https://www.ruby-lang.org/en/news/2020/04/05/support-of-ruby-2-4-has-ended/> [Accessed 15 May 2020].
@@ -98,5 +98,5 @@ Post.create!(
     From the end of March of the last year, the support of the Ruby 2.4 series was in the security maintenance phase. Now, after one year has passed, this phase has ended. Therefore, at March 31, 2020, all support of the Ruby 2.4 series has ended. Bug and security fixes from more recent Ruby versions will no longer be backported to 2.4, and no further patch release of 2.4 will be released. We released Ruby 2.4.10 at March 31, 2020, but it was to give users a little time to move to newer versions. We highly recommend that you upgrade to newer versions of Ruby as soon as possible.",
     view:1123,
     comment:345,
-    user_id:5,
+    user_id:5
 )

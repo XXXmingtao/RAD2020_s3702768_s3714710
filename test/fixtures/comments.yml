@@ -1,7 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  content.string: MyString
+  content: I like it!
+  post_id: 1
+  user_id: 2
 
 two:
-  content.string: MyString
+  content: That's cool
+  post_id: 2
+  user_id: 1
+
+three:
+  content: This is another comment
+  post_id: 2
+  user_id: 1

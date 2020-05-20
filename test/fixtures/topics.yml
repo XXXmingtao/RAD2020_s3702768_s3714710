@@ -1,7 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  topic: MyString
+Game:
+  topic: Game
 
-two:
-  topic: MyString
+RMIT:
+  topic: RMIT
+
+News:
+  topic: News

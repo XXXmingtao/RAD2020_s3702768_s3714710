@@ -1,17 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
+  title: Post 1
   user_id: 1
-  topic: MyString
-  text: MyText
-  view: 1
-  comment: 1
+  topic: Game
+  text: This is my 1st post
+  view: 0
+  comment: 0
 
 two:
-  title: MyString
+  title: Post 2
   user_id: 1
-  topic: MyString
-  text: MyText
-  view: 1
-  comment: 1
+  topic: RMIT
+  text: This is my 2nd post
+  view: 0
+  comment: 0
+
+Three:
+  title: Post 3
+  user_id: 2
+  topic: News
+  text: This is the 1st post of user 2
+  view: 0
+  comment: 0
