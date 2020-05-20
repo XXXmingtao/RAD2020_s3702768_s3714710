@@ -95,8 +95,66 @@
   /* Edit Page */
 
   .update-field {
-    margin-top: 5em;
+    margin-top: 2em;
+     
   }
+
+
+  .update-field-avatar {
+    margin-top: 2em;
+    margin-left: 2em;
+    margin-bottom: 2em;
+    display: none;
+  }
+
+  .update-field-password {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    display: none;
+    
+  }
+
+  .update-field-verification {
+
+    margin-top: 2em;
+    margin-bottom: 2em;
+    display: none;
+
+  }
+
+  .update-field-verification .btn-default {
+    margin-top: 2em;
+    margin-left: 2em;
+    margin-bottom: 2em;
+  }
+
+  .student-card-field {
+    margin-left: 2em;
+    
+  }
+
+  .input-group .student-field {
+    min-width: 120px;
+  }
+
+  .input-group .password-field {
+    min-width: 120px;
+  }
+
+  #cyber {
+    
+    width: 20em;
+    height: 15em;
+  }
+
+
+
+  .update-field-avatar .btn-default {
+
+    background-color: #f1f1f1;
+
+  }
+
 
   .panel-default textarea {
     height: 90%;
@@ -120,7 +178,7 @@
 
   .setting-bg .sidebar{
     width: 15em;
-    height: 50em;
+    height: 60em;
     border-radius: 15px;
     margin-bottom: 2em;
     margin-top: 30px;
@@ -129,12 +187,85 @@
     position: absolute;
   }
 
+  .explanation-bar {
+    
+    width: 90%;
+    margin-left: 2em;
+    margin-top: 2em;
+    height: 6em;
+    padding: 2em;
+    padding-left: 4em;
+    background-color: #f1f1f1;
+  }
+
   .main-panel {
     float: right;
     width: 83%;
-    height: 50em;
+    height: 60em;
+    margin-top: 2em;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   }
+
+  #anonymous {
+    margin-right: 1em;
+    height: 100%;
+  }
+
+  .user-icon-preview {
+    margin-top: 1em;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+
+  }
+
+  .size-constraint {
+    margin-left: 1em;
+    color: grey;
+  }
+
+  .confirm-button {
+    width: 6em;
+    height: 1.5em;
+    margin-left: 2em;
+    
+  }
+
+  .confirm-button .btn-primary {
+    background-color: #009486;
+  }
+
+  .panel-sub-nav {
+    border-style: solid;
+    border-color: #f1f1f1;
+    border-top: 0em;
+    border-left: 0em;
+    border-right: 0em;
+    border-width: 2px;
+    height: 4em;
+    margin-top: 2em;
+    
+  }
+
+  .panel-sub-nav li {
+
+    margin-right: 2em;
+    margin-top: 1em;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .panel-sub-nav li a {
+    font-size: 1.5em;
+    
+  }
+
+  .panel-sub-nav li a:hover {
+    color: #009486;
+  }
+
+
 
   .setting-form {
     width: 100%;
@@ -245,6 +376,7 @@
     margin-top:3em;
     margin-bottom:1em;
   }
+
 
   .usericon img{
       height: 100%;
