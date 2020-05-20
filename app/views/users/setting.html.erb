@@ -36,8 +36,21 @@
 
 <div class="main-panel">
 
-  <div class="update-field">
-  <form>
+  <ul class="panel-sub-nav">
+    
+    <li onClick="showInfo()">Personal Info</li>
+    
+    <li onClick="showAvatar()">Avatar</li>
+    
+    <li onClick="showPassword()">Password</li>
+    
+    <li onClick="showVerify()">Verification</li>
+  </ul>
+
+  <div class="explanation-bar">You can modify your contract details below</div>
+
+  <div class="update-field" id="edit-info">
+  <form class="personal-info-form">
     <div class="input-group">
      <span class="input-group-addon" id="basic-addon1">Username</span>
     <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
@@ -57,14 +70,71 @@
     <span class="input-group-addon" id="basic-addon1">City</span>
     <input type="text" class="form-control" placeholder="Address" aria-describedby="basic-addon1">
     </div>
+
     
-    </div>
 
     <div style="height: 20em; padding:0" class="panel panel-default">
     <div class="panel-heading">Personal Description</div>
     <textarea class="form-control textbar" placeholder="Leave your personal bio here :)" aria-describedby="basic-addon1"></textarea>
     </div>
+    
+    </div>
 
+    <div class="update-field-avatar" id="edit-avatar">
+      <label class="btn btn-default">
+        Upload Image <input type="file" style="display:none;">
+      </label>
+      <span class="size-constraint">no image than 2mb</span>
+    <div class="user-icon-preview">
+    <%= image_tag('anonymous.png', draggable: "true", id: "anonymous") %>
+    </div>
+    </div>
+
+    <div class="update-field-password" id="edit-password">
+    <div class="input-group">
+     <span class="input-group-addon password-field" id="basic-addon1">New Password</span>
+    <input type="text" class="form-control" placeholder="New password" aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group">
+    <span class="input-group-addon password-field" id="basic-addon1">Confirm</span>
+    <input type="text" class="form-control" placeholder="Confirm your new password" aria-describedby="basic-addon1">
+    </div>
+    </div>
+
+    <div class="update-field-verification" id="edit-verification">
+
+    <div class="input-group">
+     <span class="input-group-addon student-field" id="basic-addon1">Student Name</span>
+    <input type="text" class="form-control" placeholder="Your student name" aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group">
+    <span class="input-group-addon student-field" id="basic-addon1">Card Number</span>
+    <input type="text" class="form-control" placeholder="Please enter student number" aria-describedby="basic-addon1">
+    </div>
+
+    <label class="btn btn-default">
+        Upload Image <input type="file" style="display:none;">
+      </label>
+      <span class="size-constraint">no image than 2mb</span>
+    <div class="student-card-field">
+    <%= image_tag('cyber.png', draggable: "true", id: "cyber") %>
+    </div>
+
+
+
+    </div>
+
+    
+
+    
+
+    
+
+    <div class="confirm-button">
+    <input type="submit" name="commit" value="Confirm" class="btn btn-primary" data-disable-with="Save changes">
+    </div>
     
     </form>
 
