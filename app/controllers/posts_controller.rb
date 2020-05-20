@@ -8,7 +8,7 @@ class PostsController < ApplicationController
 
   def show
     @post=Post.find(params[:id])
-    @post.update_column(:view, @post.view+=1)
+    @post.update_column(:view, @post.view+=1) unless request.original_url == request.referrer
     @user=User.find_by_id(@post.user_id)
     @active_users = Array.new
     Post.order('created_at DESC').each do |post|
@@ -34,14 +34,14 @@ class PostsController < ApplicationController
     end
   end
 
-  def logged_in_user
-    unless logged_in?
-      flash[:danger]= "Please log in."
-      redirect_to login_url
-    end
-  end
-
   private
+
+    def logged_in_user
+      unless logged_in?
+        flash[:danger]= "Please log in."
+        redirect_to login_url
+      end
+    end
   
     def post_params
       params.require(:post).permit(:title, :topic, :text)

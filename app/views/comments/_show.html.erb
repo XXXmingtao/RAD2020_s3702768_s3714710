@@ -1,5 +1,33 @@
+<h4 class="comments-count"><%= "#{@post.comment} Comments" %></h4>
+<div class="clear"></div>
 <% Comment.all.each do |comment| %>
     <% if comment.post_id == @post.id %>
-        <p><%= comment.content %></p>
+        <div class="comment-card">
+            <div class="comment-card-info">
+                <div class = "info-bar-photo">
+                    <% if User.find_by_id(comment.user_id) %>
+                        <%= link_to User.find_by_id(comment.user_id) do %>
+                            <%= gravatar_for User.find_by_id(comment.user_id) %>
+                        <% end %>
+                    <% else %>
+                        <%= gravatar_for User.find_by_id(comment.user_id) %>
+                    <% end %>
+                </div>
+                <div class= "comment-card-name">
+                    <% if User.find_by_id(comment.user_id) %>
+                        <%= link_to User.find_by_id(comment.user_id) do %>
+                            <%= content_tag(:div, (name_for User.find_by_id(comment.user_id)), class: "comment-card-name") %>
+                        <% end %>
+                    <% else %>
+                        <%= content_tag(:div, (name_for User.find_by_id(comment.user_id)), class: "comment-card-name") %>
+                    <% end %>
+                    <div class="comment-card-reply"><a href="">reply</a></div>
+                </div>
+                    <%= content_tag(:div, comment.created_at.in_time_zone("Melbourne").strftime("%Y-%m-%d %T"), class: "comment-card-time") %>
+            </div>
+            <div class = "comment-card-conten">
+                <%= simple_format(comment.content) %>
+            </div>
+        </div>
     <% end %>
 <% end %>
