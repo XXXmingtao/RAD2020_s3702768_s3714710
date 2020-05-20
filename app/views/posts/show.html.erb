@@ -29,7 +29,7 @@
         <% else %>
             <p class="info-bar-name-deleted"><%= name_for @user %></p>
         <% end %>
-        <p class="info-bar-time"><%= @post.created_at.in_time_zone("Melbourne").strftime("%Y-%m-%d %T") %></p>
+        <p class="info-bar-time"><%= post_created_time(@post) %></p>
         <div class = "clear"></div>
     </div>
     <section class="post-text">

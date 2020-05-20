@@ -22,4 +22,12 @@ module UsersHelper
         content_tag(:span, user.created_at.in_time_zone("Melbourne").strftime("%Y-%m-%d"))
     end
 
+    def address_for(user)
+        if user.address
+            user.address
+        else
+            "Other"
+        end
+    end
+
 end

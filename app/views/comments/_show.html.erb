@@ -23,7 +23,7 @@
                     <% end %>
                     <div class="comment-card-reply"><a href="">reply</a></div>
                 </div>
-                    <%= content_tag(:div, comment.created_at.in_time_zone("Melbourne").strftime("%Y-%m-%d %T"), class: "comment-card-time") %>
+                    <%= content_tag(:div, comment_created_time(comment), class: "comment-card-time") %>
             </div>
             <div class = "comment-card-conten">
                 <%= simple_format(comment.content) %>

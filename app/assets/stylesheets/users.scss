@@ -99,7 +99,6 @@
   }
 
   .panel-default textarea {
-
     height: 90%;
   }
 
@@ -134,8 +133,6 @@
     float: right;
     width: 83%;
     height: 50em;
-    /* border-style: solid;
-    border-width: 1px; */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   }
 
@@ -151,13 +148,10 @@
   .setting-bg .sidebar a {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: aliceblue;
-    
-    
   }
 
   .setting-bg .sidebar a:hover {
     color: skyblue;
-    
   }
 
   .sidebar .side-link {
@@ -185,48 +179,57 @@
     height: 80%;
   }
 
-  i {
-    margin: 5px;
-  }
-
   .userinfo {
     text-align: center;
   }
 
-  .map-joinTime {
+  .userinfo h3{
+    margin:5px;
+  }
+
+  .map-joinTime{
     text-align: center;
-}
+  }
+
+  .map-joinTime i{
+    margin: 5px 30px;
+    font-size: 0.9em;
+    color:rgb(150, 150, 150);
+  }
+
+  .user-info{
+    margin-bottom: 50px;
+  }
 
   .profile {
     bottom: 0;
-    margin-top: 2em;
-    width: 100%;
-   /* border-style: solid;
-    border-width: 1px; */
+    margin:0 auto;
+    width: 95%;
     background-color: #E0E0E0;
   }
 
   .post-comment-container {
-    /* border-style: solid;
-    border-width: 1px; */
     width: 100%;
     height: 100%;
-    text-align: center;
+    padding: 20px 10px;
   }
 
   .panel-default {
-    display: inline-block;
-    width: 45em;
-    height: 30em;
-    margin-right: 1em;
-    margin-top: 1em;
-    margin-bottom: 3em;
-    margin-left: 2em;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 49.5%;
+    min-height: 30em;
+  }
+
+  .panel-recent-post{
+    float: left;
+  }
+
+  .panel-recent-comment{
+    float: right;
   }
 
   .panel-heading {
     text-align: left;
+    border:none;
   }
 
   .profile .container .panel-body {
@@ -272,14 +275,56 @@
     height: 100%;
   }
 
-  .panel-heading a:hover{
-    color: skyblue;
-  }
-
   .profile-bg {
     width: 100%;
   }
 
   .profile-bg .container {
     width: 100%;
+  }
+
+  .profile-post-card{
+    border-bottom: 1px solid rgb(238,238,238);
+    padding:10px 15px;
+  }
+
+  .profile-post-card-title,.profile-post-card-time{
+    float: left;
+  }
+
+  .profile-post-card-title{
+    width: 80%;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
+  }
+
+  .profile-post-card-title a:hover{
+    color:rgb(253,87,35);
+  }
+
+  .profile-post-card-time{
+    width: 20%;
+    color:rgb(150, 150, 150);
+    text-align: right;
+  }
+
+  .profile-comment-card{
+    text-align: left;
+    padding: 10px 15px;
+  }
+
+  .profile-comment-card-content{
+    background-color: rgb(242,242,245);
+    padding: 10px 15px; 
+    border-radius: 5%;
+  }
+
+  .profile-comment-card a{
+    color:rgb(20, 136, 224);
+  }
+
+  .profile-comment-card a:hover{
+    color:rgb(30,158,255);
   }
