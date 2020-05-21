@@ -8,7 +8,11 @@
       <% end %>
     </div>
     <div class="clear"></div>
-    <p class="result-text">Results for <b><%= params[:search] %></b></p>
+    <% if @posts.length !=0 %>
+      <p class="result-text">Results for <b><%= params[:search] %></b></p>
+    <% else %>
+      <p class="result-text">We couldn't find any results for <b><%= params[:search] %></b></p>
+    <% end %>
     <% @posts.each do |post| %>
       <%= content_tag :div, class: "home-post-card", id:"post-card-#{post.topic}" do %>
         <%= content_tag :div, class:"post-card-image" do%>

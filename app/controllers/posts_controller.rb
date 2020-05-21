@@ -7,16 +7,20 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post=Post.find(params[:id])
-    @post.update_column(:view, @post.view+=1) unless request.original_url == request.referrer
-    @user=User.find_by_id(@post.user_id)
-    @active_users = Array.new
-    Post.order('created_at DESC').each do |post|
-      if User.find_by_id(post.user_id) != nil
-        @active_users.push(User.find_by_id(post.user_id)) unless @active_users.include?(User.find_by_id(post.user_id))
+    @post=Post.find_by_id(params[:id])
+    if @post.nil?
+      render 'post_not_found'
+    else
+      @post.update_column(:view, @post.view+=1) unless request.original_url == request.referrer
+      @user=User.find_by_id(@post.user_id)
+      @active_users = Array.new
+      Post.order('created_at DESC').each do |post|
+        if User.find_by_id(post.user_id) != nil
+          @active_users.push(User.find_by_id(post.user_id)) unless @active_users.include?(User.find_by_id(post.user_id))
+        end
       end
+      @comment=Comment.new
     end
-    @comment=Comment.new
   end
 
   def create
