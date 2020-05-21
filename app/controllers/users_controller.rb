@@ -21,9 +21,6 @@ class UsersController < ApplicationController
     @user=User.new
   end
 
-  def setting
-  end
-
   def create
     @user=User.new(user_params)
     if @user.save
@@ -58,7 +55,7 @@ class UsersController < ApplicationController
   private
   
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :email, :phone)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :email, :phone, :address)
     end
 
     def logged_in_user
