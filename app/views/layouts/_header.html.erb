@@ -1,0 +1,45 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+    <%= link_to "News+", root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav">
+          <li><%= link_to "Home", root_path, class:"navbar-button navbar-home"%></li>
+          <li class="dropdown">
+              <a href="#" class="dropdown-toggle navbar-button" data-toggle="dropdown">
+                News <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to"Not Avaliable", "" %></li>
+              </ul>
+          </li>
+
+        <% if logged_in? %>
+          <li class="navbar-username"><%= current_user.name%></li>
+          <li class="dropdown nav-gravatar">
+            <a href="#" class="dropdown-toggle nav-gravatar-toggle" data-toggle="dropdown">
+              <div class="gravatar-circle">
+                <%= gravatar_for current_user %> 
+              </div>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to"Profile", current_user %></li>
+              <li><%= link_to"Settings", edit_user_path(current_user) %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to"Log out", logout_path,method: :delete %>
+              </li>
+              <!-- Delete Later -->
+                <li><%= link_to"edit", setting_path %></li>
+              <!-- Delete above -->
+            </ul>
+         </li>
+        <% else %>
+        <div class="navbar-right">
+          <li><%= link_to image_tag("anonymous.png"), login_path %></li>
+        </div>
+          
+        <% end %>
+          
+
+      </ul>
+    </nav>
+</header>

@@ -1,0 +1,9 @@
+ <body class="home-bg">
+ <h1 class="search-titile">News+</h1>
+ <div class="search-search">
+    <%= form_tag("/search",method: :get) do %>
+        <input type="text" class="search-input" name="search" placeholder="Search">
+        <input type="submit" class="search-button" value="">
+    <% end %>
+</div>
+</body>

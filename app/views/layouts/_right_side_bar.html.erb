@@ -1,0 +1,86 @@
+<!-- Info Board -->
+
+  <div class="home-info-board">
+
+    <!-- Recent Members -->
+
+    <div class="info-board-members">
+      <div class="info-board-title">
+        <h4>Recent Members</h4>
+      </div>
+      <div class="info-board-main">
+
+      <% @active_users.each do |user| %>
+        <%= link_to user do %>
+          <div class="members-card">
+            <div class="members-card-photo">
+              <%= gravatar_for user %>
+            </div>
+            <div class="members-card-name"><%= user.name %></div>
+          </div>
+        <%end%>
+      <%end%>
+        
+        <div class="clear"></div>
+      </div>
+    </div>
+
+    <!-- Topic-->
+
+    <div class="info-board-topic">
+      <div class="info-board-title">
+        <h4>Topic</h4>
+      </div>
+      <div class="info-board-main">
+
+        <% Topic.all.each do |t| %>
+          <% if t.topic != "News" %>
+            <div class="topic-checkbox" onClick="selectTopic()">
+              <%= check_box_tag t.topic %>
+              <%= label_tag t.topic,t.topic %>
+            </div>
+          <%end%>
+        <%end%>
+
+        <div class="clear"></div>
+      </div>
+    </div>
+
+    <!-- Post -->
+
+    <div class="info-board-post">
+      <div class="info-board-title">
+        <h4>Post</h4>
+      </div>
+      <div class="info-board-main">
+
+      <% Post.order('view DESC').limit(5).each do |tb_post| %>
+        <div class="info-board-post-card">
+        <%= link_to tb_post do %>
+            <div class="info-board-post-title"><%= tb_post.title %></div>
+        <% end %>
+        <div class="info-board-post-view"><%= tb_post.view %></div>
+          <div class="clear"></div>
+        </div>
+      <%end%>
+        <div class="clear"></div>
+      </div>
+    </div>
+
+    <!-- Link -->
+
+    <div class="info-board-links">
+      <div class="info-board-title">
+        <h4>Links</h4>
+      </div>
+      <div class="info-board-main">
+        <a href="https://apidock.com/rails">Rails</a>
+        <a href="https://www.rmit.edu.au/">RMIT</a>
+        <a href="https://github.com/">Github</a>
+        <a href="https://heroku.com/">Heroku</a>
+        <a href="https://www.google.com.au/">Google</a>
+        <div class="clear"></div>
+      </div>
+    </div>
+
+  </div>

@@ -1,0 +1,16 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+alpha:
+  content: I like it!
+  post: one
+  user: archer
+
+beta:
+  content: That's cool
+  post: two
+  user: michael
+
+charlie:
+  content: This is another comment
+  post: two
+  user: michael

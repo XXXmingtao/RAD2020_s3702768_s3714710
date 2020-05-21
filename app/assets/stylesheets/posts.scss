@@ -1,0 +1,143 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/* Post Page */
+
+.post-container{
+    width: calc(100% - 400px);
+    float: left;
+    background-color: white;
+    padding: 30px 20px 20px 20px;
+    margin-top: 0;
+  }
+  
+  .post-status-bar{
+    position: relative;
+    height: 40px;
+  }
+  
+  .post-topic{
+    background-color: rgb(153,153,153);
+    color: white;
+    padding:0 10px 0 10px;
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    left:0;
+  }
+  
+  .post-comment-view{
+    float: right;
+  }
+  
+  .post-info-bar{
+    background-color:rgb(238,238,238);
+    padding: 10px 5px 10px 5px;
+    margin:10px 0 20px 0;
+  }
+  
+  .info-bar-photo{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    float: left;
+  }
+  
+  .info-bar-photo img{
+    height: 100%;
+    width: 100%;
+  }
+  
+  .post-info-bar p{
+    float:left;
+    height: 50px;
+    line-height: 50px;
+  }
+  
+  .info-bar-name{
+    margin:0 0 0 10px;
+    color:rgb(20, 136, 224);
+  }
+  
+  .info-bar-name:hover{
+    color:rgb(30,158,255);
+  }
+
+  .info-bar-name-deleted{
+    margin:0 0 0 10px;
+  }
+  
+  .info-bar-time{
+    margin:0 0 0 40px;
+    color:rgb(145, 145, 145);
+  }
+  
+  /* New Post form */
+  .post-form-title{
+    width: 100%;
+    background-color: rgb(241, 241, 241);
+    border-left: 4px solid rgb(14,149,135);
+    padding: 10px 15px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .new-post-row{
+    position: relative;
+    margin-bottom: 20px;
+    height: 30px;
+  }
+  
+  .new-post-row label{
+    width: 10%;
+    margin: 0;
+    background-color: rgb(247,247,247);
+    border: 1px solid #bbb;
+    font-weight: normal;
+    text-align: center;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+  }
+  
+  #post_topic, #post_title{
+    margin:0 0 0 -1px;
+    padding:5px;
+    height: 30px !important;
+    border-radius: 0 !important;
+  }
+  
+  #post_topic{
+    width: 20%;
+  }
+  
+  #post_topic option:first-child{
+    color:rgb(156,156,156);
+  }
+  
+  #post_title{
+    width: 90%;
+  }
+  
+  #post_text{
+    padding:5px 10px;
+    margin-bottom: 40px;
+  }
+  
+  .post-form-submit, .post-form-cancel{
+    width: 10% !important;
+    height: 100% !important;
+    line-height: 30px;
+    border: 1px solid #bbb;
+    float: left;
+    text-align: center;
+    margin: 20px 15px 40px 0;
+    box-sizing: content-box;
+  }
+  
+  .post-form-submit{
+    background-color:rgb(14,149,135);
+    color:white;
+  }
+  

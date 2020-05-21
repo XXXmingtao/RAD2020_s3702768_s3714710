@@ -1,0 +1,45 @@
+<body class="home-bg">
+  <div class="result-post-board">
+
+    <div class="result-search">
+      <%= form_tag("/search",method: :get) do %>
+        <input type="text" class="search-input" name="search" placeholder="Search">
+        <input type="submit" class="search-button" value="">
+      <% end %>
+    </div>
+    <div class="clear"></div>
+    <% if @posts.length !=0 %>
+      <p class="result-text">Results for <b><%= params[:search] %></b></p>
+    <% else %>
+      <p class="result-text">We couldn't find any results for <b><%= params[:search] %></b></p>
+    <% end %>
+    <% @posts.each do |post| %>
+      <%= content_tag :div, class: "home-post-card", id:"post-card-#{post.topic}" do %>
+        <%= content_tag :div, class:"post-card-image" do%>
+          <%= link_to User.find_by_id(post.user_id) do %>
+            <%= gravatar_for User.find_by_id(post.user_id) %>
+          <% end %>
+        <% end %>
+        <div class="post-card-title">
+          <%= link_to post do %>
+            <h4><%= post.title %></h4> 
+          <% end %>
+        </div>
+        <div class="post-card-info">
+          <div class="card-info-left">
+            <%= link_to User.find_by_id(post.user_id) do %>
+              <p><%= name_for User.find_by_id(post.user_id) %></p>
+            <% end %>
+            <p><%= post_created_time(post) %></p>
+            <p><%= post.topic %></p>
+          </div>
+          <div class="card-info-right">
+            <div class="card-info-comment"><%= post.comment %></div>
+            <div class="card-info-view"><%= post.view %></div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<div class="clear"></div>
+</body>
