@@ -4,10 +4,10 @@ class CommentsController < ApplicationController
   def create
     @comment=Comment.new(comment_params)
     @comment.user_id = current_user.id
-    @comment.post_id = params[:token]
+    @comment.post_id = params[:id]
     if @comment.save
       flash[:success]="New comment has been published!"
-      post = Post.find(params[:token])
+      post = Post.find(params[:id])
       post.update_column(:comment, post.comment+=1)
     elsif @comment.content==""
       flash[:fail]="Comment can't be blank"
