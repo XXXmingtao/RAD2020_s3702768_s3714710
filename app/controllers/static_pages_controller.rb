@@ -10,12 +10,11 @@ class StaticPagesController < ApplicationController
     end
   end
 
-  def help
-  end
-
-  def about
-  end
-
-  def contact
+  def search
+    if @posts=Post.search(params[:search])
+      render 'result'
+    else
+      render 'search'
+    end
   end
 end
