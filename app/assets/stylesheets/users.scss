@@ -318,14 +318,23 @@
     margin:5px;
   }
 
-  .map-joinTime{
-    text-align: center;
-  }
-
   .map-joinTime i{
-    margin: 5px 30px;
     font-size: 0.9em;
     color:rgb(150, 150, 150);
+  }
+
+  .profile-icon-date,.profile-icon-address{
+    float: left;
+    width: 50%;
+    padding: 0 30px;
+  }
+
+  .profile-icon-date{
+    text-align: right;
+  }
+
+  .profile-icon-address{
+    text-align: left;
   }
 
   .user-info{

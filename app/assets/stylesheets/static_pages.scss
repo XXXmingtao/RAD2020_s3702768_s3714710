@@ -144,21 +144,10 @@
   
   .card-info-comment, .card-info-view{
     float: left;
-    background-repeat: no-repeat;
-    background-position:left center;
-    padding-left: 30px;
     margin-right: 30px;
     height: 40px;
     line-height: 40px;
-  }
-  
-  .card-info-comment{
-    background-image: url('comment.png');
-  }
-  
-  .card-info-view{
-    background-image: url('view.png');
-    background-repeat: no-repeat;
+    color:rgb(150, 150, 150);
   }
   
   .home-info-board{

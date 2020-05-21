@@ -21,7 +21,7 @@
                     <% else %>
                         <%= content_tag(:div, (name_for User.find_by_id(comment.user_id)), class: "comment-card-name") %>
                     <% end %>
-                    <div class="comment-card-reply"><a href="">reply</a></div>
+                    <div class="comment-card-reply"><a href=""><i class="far fa-comment-alt"></i>reply</a></div>
                 </div>
                     <%= content_tag(:div, comment_created_time(comment), class: "comment-card-time") %>
             </div>
