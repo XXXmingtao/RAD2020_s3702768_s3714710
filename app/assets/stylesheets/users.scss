@@ -130,7 +130,9 @@
 
   .student-card-field {
     margin-left: 2em;
-    
+    height: 20em;
+    width: 30em;
+    overflow: hidden;
   }
 
   .input-group .student-field {
@@ -274,12 +276,12 @@
     cursor: pointer;
   }
 
-  .panel-sub-nav li a {
+  .panel-sub-nav li {
     font-size: 1.5em;
     
   }
 
-  .panel-sub-nav li a:hover {
+  .panel-sub-nav li:hover {
     color: #009486;
   }
 
@@ -366,6 +368,10 @@
   .panel-default {
     width: 49.5%;
     min-height: 30em;
+  }
+
+  .btn-default .hidden-avatar-input {
+    display: none;
   }
 
   .panel-recent-post{

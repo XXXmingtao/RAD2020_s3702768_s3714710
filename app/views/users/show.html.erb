@@ -2,7 +2,8 @@
 <% provide(:title, @user.name) %>
 <div class="user-info">
         <div class="usericon">
-            <%= gravatar_for @user %>
+                <%= gravatar_for current_user %> 
+
         </div>
             <div class="userinfo">
             <h3>

@@ -73,7 +73,7 @@
 
     <div class="input-group">
     <span class="input-group-addon" id="basic-addon1">City</span>
-    <%= f.text_field :address ,class:'form-control' %>
+    <%= f.text_field :address ,class:'form-control', placeholder: 'Address' %>
     </div>
 
     <div class="error-message-area">
@@ -84,19 +84,25 @@
 
     <div class="panel panel-default text-panel">
     <div class="panel-heading">Personal Description</div>
-    <textarea class="form-control textbar" placeholder="Leave your personal bio here :)" aria-describedby="basic-addon1"></textarea>
+    <%= f.text_area(:userbio, size: '50x10', placeholder: 'Please enter your bio : )') %>
+    
     </div>
     
     </div>
 
     <div class="update-field-avatar" id="edit-avatar">
       <label class="btn btn-default">
-        Upload Image <input type="file" style="display:none;">
+        Upload Image 
+        <%= f.file_field :avatar ,class:'hidden-avatar-input'%>
       </label>
+      
       <span class="size-constraint">no image than 2mb</span>
     <div class="user-icon-preview">
-    <%= gravatar_for @user, draggable: "true", id: "anonymous" %>
-    
+    <% if @user.avatar.attached? %>
+      <image src="<%=(url_for(@user.avatar))%>" style="width:100%; height: 100%;">
+    <% else %>
+    <%= image_tag('anonymous.png', draggable: "true", id: "anonymous") %>
+    <% end %>
     </div>
     </div>
 
@@ -125,12 +131,17 @@
     </div>
 
     <label class="btn btn-default">
-        Upload Image <input type="file" style="display:none;">
+        Upload Image 
+        <%= f.file_field :verifycard ,class:'hidden-avatar-input'%>
       </label>
       <span class="size-constraint">no image than 2mb</span>
     <div class="student-card-field">
     
-    <%= image_tag('cyber.png', draggable: "true", id: "cyber") %> 
+    <% if @user.verifycard.attached? %>
+      <image src="<%=(url_for(@user.verifycard))%>" style="width:100%; height:100%;">
+    <% else %>
+    <%= image_tag('anonymous.png', draggable: "true", id: "anonymous") %>
+    <% end %>
     </div>
 
 
