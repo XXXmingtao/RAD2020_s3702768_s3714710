@@ -98,11 +98,7 @@
       
       <span class="size-constraint">no image than 2mb</span>
     <div class="user-icon-preview">
-    <% if @user.avatar.attached? %>
-      <image src="<%=(url_for(@user.avatar))%>" style="width:100%; height: 100%;">
-    <% else %>
-    <%= image_tag('anonymous.png', draggable: "true", id: "anonymous") %>
-    <% end %>
+    <%= gravatar_for current_user %> 
     </div>
     </div>
 
