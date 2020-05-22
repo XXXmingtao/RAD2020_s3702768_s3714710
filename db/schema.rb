@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2020_05_22_105703) do
     t.string "content"
     t.integer "post_id"
     t.integer "user_id"
+    t.integer "comment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

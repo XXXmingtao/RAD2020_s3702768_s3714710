@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
     @comment=Comment.new(comment_params)
     @comment.user_id = current_user.id
     @comment.post_id = params[:id]
+    @comment.comment_id = params[:comment]? params[:reply] : nil  
     if @comment.save
       flash[:success]="New comment has been published!"
       post = Post.find(params[:id])

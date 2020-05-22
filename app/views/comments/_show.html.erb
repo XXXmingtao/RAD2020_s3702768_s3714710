@@ -1,7 +1,7 @@
 <h4 class="comments-count"><%= "#{@post.comment} Comments" %></h4>
 <div class="clear"></div>
 <% Comment.all.each do |comment| %>
-    <% if comment.post_id == @post.id %>
+    <% if comment.post_id == @post.id && comment.comment_id.nil? %>
         <div class="comment-card">
             <div class="comment-card-info">
                 <div class = "info-bar-photo">
@@ -21,13 +21,70 @@
                     <% else %>
                         <%= content_tag(:div, (name_for User.find_by_id(comment.user_id)), class: "comment-card-name") %>
                     <% end %>
-                    <div class="comment-card-reply"><a href=""><i class="far fa-comment-alt"></i>reply</a></div>
+                    <div class="comment-card-reply">
+                        <%= content_tag :div, class:"reply-button", :onclick=>"showReplyBox(reply_box_#{comment.id})" do %>
+                            <i class="far fa-comment-alt"></i>reply
+                        <% end %>
+                    </div>
                 </div>
-                    <%= content_tag(:div, comment_created_time(comment), class: "comment-card-time") %>
+                <%= content_tag(:div, comment_created_time(comment), class: "comment-card-time") %>
             </div>
-            <div class = "comment-card-conten">
+            <div class = "comment-card-content">
                 <%= simple_format(comment.content) %>
             </div>
+            <%= content_tag :div, class: "reply-box", id: "reply_box_#{comment.id}" do %>
+                <%= form_for(@comment,url: "#{request.original_url}/comment/#{comment.id}") do |f| %>
+                    <%= f.text_area :content, class:"reply-box-input",rows: 5, placeholder: "Leave your comment here" %>
+                    <%= f.submit"Reply", class: "comment-submit" %>
+                <% end %>
+            <% end %>
         </div>
+        <% Comment.all.each do |nest_comment| %>
+            <% if nest_comment.comment_id == comment.id %>
+                <div class="nest-comment-card">
+                    <div class="comment-card-info">
+                        <div class = "info-bar-photo">
+                            <% if User.find_by_id(nest_comment.user_id) %>
+                                <%= link_to User.find_by_id(nest_comment.user_id) do %>
+                                    <%= gravatar_for User.find_by_id(nest_comment.user_id) %>
+                                <% end %>
+                            <% else %>
+                                <%= gravatar_for User.find_by_id(nest_comment.user_id) %>
+                            <% end %>
+                        </div>
+                        <div class= "comment-card-name">
+                            <% if User.find_by_id(nest_comment.user_id) %>
+                                <p>
+                                <%= link_to User.find_by_id(nest_comment.user_id) do %>
+                                    <%=name_for User.find_by_id(nest_comment.user_id) %>
+                                <% end %>
+                                >
+                                <%= link_to User.find_by_id(nest_comment.user_id) do %>
+                                    @<%=name_for User.find_by_id(Comment.find_by_id(nest_comment.comment_id).user_id) %>
+                                <% end %>
+                                </p>
+                            <% else %>
+                                <%= content_tag(:div, (name_for User.find_by_id(nest_comment.user_id)), class: "comment-card-name") %>
+                            <% end %>
+                            <div class="comment-card-reply">
+                                <%= content_tag :div, class:"reply-button", :onclick=>"showReplyBox(reply_box_#{nest_comment.id})" do %>
+                                    <i class="far fa-comment-alt"></i>reply
+                                <% end %>
+                            </div>
+                        </div>
+                        <%= content_tag(:div, comment_created_time(nest_comment), class: "comment-card-time") %>
+                    </div>
+                    <div class = "comment-card-content">
+                        <%= simple_format(nest_comment.content) %>
+                    </div>
+                    <%= content_tag :div, class: "reply-box", id: "reply_box_#{nest_comment.id}" do %>
+                        <%= form_for(@comment,url: "#{request.original_url}/comment/#{comment.id}") do |f| %>
+                            <%= f.text_area :content, class:"reply-box-input",rows: 5, placeholder: "Leave your comment here" %>
+                            <%= f.submit"Reply", class: "comment-submit" %>
+                        <% end %>
+                    <% end %>
+                </div>
+            <% end %>
+        <% end %>
     <% end %>
 <% end %>

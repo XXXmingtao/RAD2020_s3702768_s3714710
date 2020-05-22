@@ -42,10 +42,14 @@
     margin-bottom: 20px;
 }
 
-.comment-card{
+.comment-card,.nest-comment-card{
     border-top: 1px solid rgb(238,238,238);
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+.nest-comment-card{
+    margin-left: 5%;
 }
 
 .comment-card-reply{
@@ -54,8 +58,12 @@
     margin-right: 30px;
 }
 
-.comment-card-reply a, .comment-card-time{
+.reply-button, .comment-card-time{
     color:rgb(150, 150, 150);
+}
+
+.reply-button:hover{
+    color:black;
 }
 
 .comment-card-info{
@@ -72,14 +80,30 @@
     margin-right: 10px;
 }
 
-.comment-card-name>a{
+.comment-card-name>a,.comment-card-name>p a{
     color:rgb(20, 136, 224);
 }
 
-.comment-card-name>a:hover{
+.comment-card-name>a:hover,.comment-card-name>p a:hover{
     color:rgb(30,158,255);
 }
 
-.comment-card-conten p{
+.comment-card-content p{
     margin:0;
+}
+
+.reply-button{
+    cursor: pointer;
+}
+
+.reply-box{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    display: none;
+}
+
+.reply-box-input{
+    margin-top: 10px;
+    border-radius: 5px;
 }

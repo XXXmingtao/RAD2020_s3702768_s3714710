@@ -29,7 +29,7 @@ module UsersHelper
     end
 
     def address_for(user)
-        if user.address
+        if user.address && user.address != ""
             user.address
         else
             "Other"
