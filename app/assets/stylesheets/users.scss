@@ -130,7 +130,9 @@
 
   .student-card-field {
     margin-left: 2em;
-    
+    height: 20em;
+    width: 30em;
+    overflow: hidden;
   }
 
   .input-group .student-field {
@@ -157,7 +159,11 @@
 
 
   .panel-default textarea {
-    height: 90%;
+    height: 92%;
+  }
+
+  .text-panel {
+    margin-top: 2em;
   }
 
 
@@ -172,13 +178,19 @@
 
   }
 
+  .text-panel {
+    margin-left: 2em;
+    height: 10em;
+  }
+
+
   .update-field .input-group .input-group-addon {
     width: 2em;
   }
 
   .setting-bg .sidebar{
     width: 15em;
-    height: 60em;
+    height: 85em;
     border-radius: 15px;
     margin-bottom: 2em;
     margin-top: 30px;
@@ -201,7 +213,7 @@
   .main-panel {
     float: right;
     width: 83%;
-    height: 60em;
+    height: 85em;
     margin-top: 2em;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   }
@@ -218,6 +230,14 @@
     border-radius: 50%;
     overflow: hidden;
 
+  }
+
+  .error-message-area {
+    width: 25em;
+    float: left;
+    margin-right: 5em;
+    vertical-align: top;
+    
   }
 
   .size-constraint {
@@ -256,12 +276,12 @@
     cursor: pointer;
   }
 
-  .panel-sub-nav li a {
+  .panel-sub-nav li {
     font-size: 1.5em;
     
   }
 
-  .panel-sub-nav li a:hover {
+  .panel-sub-nav li:hover {
     color: #009486;
   }
 
@@ -357,6 +377,10 @@
   .panel-default {
     width: 49.5%;
     min-height: 30em;
+  }
+
+  .btn-default .hidden-avatar-input {
+    display: none;
   }
 
   .panel-recent-post{
