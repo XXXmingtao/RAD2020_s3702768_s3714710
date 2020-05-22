@@ -2,5 +2,5 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 @showReplyBox=(id) ->
-    $('.reply-box').hide();
+    $('.reply-box').hide()
     $(id).show()

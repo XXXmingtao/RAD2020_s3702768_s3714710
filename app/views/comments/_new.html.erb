@@ -3,7 +3,7 @@
             <div class="comment-title">
                 <h3>Comment</h3>
             </div>
+            <%= f.hidden_field :root, :value => nil %>
             <%= f.text_area :content, cols: 20, rows: 10, placeholder: "Leave your comment here" %>
-            
             <%= f.submit"Post", class: "comment-submit" %>
         <% end %>

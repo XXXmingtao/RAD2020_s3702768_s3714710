@@ -34,13 +34,14 @@
             </div>
             <%= content_tag :div, class: "reply-box", id: "reply_box_#{comment.id}" do %>
                 <%= form_for(@comment,url: "#{request.original_url}/comment/#{comment.id}") do |f| %>
-                    <%= f.text_area :content, class:"reply-box-input",rows: 5, placeholder: "Leave your comment here" %>
+                    <%= f.hidden_field :root, :value => comment.id %>
+                    <%= f.text_area :content, class:"reply-box-input",rows: 5, placeholder: "Reply to #{name_for User.find_by_id(comment.user_id)}" %>
                     <%= f.submit"Reply", class: "comment-submit" %>
                 <% end %>
             <% end %>
         </div>
         <% Comment.all.each do |nest_comment| %>
-            <% if nest_comment.comment_id == comment.id %>
+            <% if nest_comment.root == comment.id %>
                 <div class="nest-comment-card">
                     <div class="comment-card-info">
                         <div class = "info-bar-photo">
@@ -59,7 +60,7 @@
                                     <%=name_for User.find_by_id(nest_comment.user_id) %>
                                 <% end %>
                                 >
-                                <%= link_to User.find_by_id(nest_comment.user_id) do %>
+                                <%= link_to  User.find_by_id(Comment.find_by_id(nest_comment.comment_id).user_id) do %>
                                     @<%=name_for User.find_by_id(Comment.find_by_id(nest_comment.comment_id).user_id) %>
                                 <% end %>
                                 </p>
@@ -78,8 +79,9 @@
                         <%= simple_format(nest_comment.content) %>
                     </div>
                     <%= content_tag :div, class: "reply-box", id: "reply_box_#{nest_comment.id}" do %>
-                        <%= form_for(@comment,url: "#{request.original_url}/comment/#{comment.id}") do |f| %>
-                            <%= f.text_area :content, class:"reply-box-input",rows: 5, placeholder: "Leave your comment here" %>
+                        <%= form_for(@comment,url: "#{request.original_url}/comment/#{nest_comment.id}") do |f| %>
+                            <%= f.hidden_field :root, :value => comment.id %>
+                            <%= f.text_area :content, class:"reply-box-input",rows: 5, placeholder: "Reply to #{name_for User.find_by_id(nest_comment.user_id)}" %>
                             <%= f.submit"Reply", class: "comment-submit" %>
                         <% end %>
                     <% end %>
