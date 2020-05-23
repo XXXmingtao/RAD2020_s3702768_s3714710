@@ -4,22 +4,14 @@
 <%= render 'layouts/left_side_bar' %>
 
 <div class="setting-main-panel">
-
   <ul class="panel-sub-nav">
-    
     <li onClick="showInfo()">Personal Info</li>
-    
     <li onClick="showAvatar()">Avatar</li>
-    
     <li onClick="showPassword()">Password</li>
-    
     <li onClick="showVerify()">Verification</li>
   </ul>
-
   <%= render'shared/error_messages' %>
-
   <div class="explanation-bar">You can modify your contract details below</div>
-
   <div class="update-field" id="edit-info">
   <%= form_for(@user) do |f| %>
     
@@ -60,11 +52,10 @@
         Upload Image 
         <%= f.file_field :avatar ,class:'hidden-avatar-input'%>
       </label>
-      
       <span class="size-constraint">no image than 2mb</span>
-    <div class="user-icon-preview">
-    <%= gravatar_for current_user %> 
-    </div>
+      <div class="user-icon-preview">
+      <%= gravatar_for current_user %> 
+      </div>
     </div>
 
     <div class="update-field-password" id="edit-password">
@@ -109,20 +100,7 @@
     <div class="confirm-button">
     <%= f.submit"Confirm",class:"btn btn-primary" %>
     </div>
-    
   <% end %>
-
-    
-
-    
-
-
 </div>
-
-
-
-
-
-
 </body>
 

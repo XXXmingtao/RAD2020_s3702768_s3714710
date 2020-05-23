@@ -18,29 +18,29 @@
 <div class="profile">
             <div class="post-comment-container">
                 <div class="panel panel-default panel-recent-post">
-                <div class="panel-heading">Recent posts:</div>
-                <% @posts.each do |post| %>
-                    <div class="profile-post-card">
-                        <div class="profile-post-card-title">
-                            <%= link_to post.title, post %>
+                    <div class="panel-heading">Recent posts:</div>
+                    <% @posts.each do |post| %>
+                        <div class="profile-post-card">
+                            <div class="profile-post-card-title">
+                                <%= link_to post.title, post %>
+                            </div>
+                            <div class="profile-post-card-time">
+                                <%= post_created_date(post)%>
+                            </div>
+                            <div class="clear"></div>
                         </div>
-                        <div class="profile-post-card-time">
-                            <%= post_created_date(post)%>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                <% end %>
+                    <% end %>
                 </div>
                 <div class="panel panel-default panel-recent-comment">
-                <div class="panel-heading">Rcent comments:</div>
-                <% @comments.each do |comment| %>
-                    <div class="profile-comment-card">
-                        <p><%=comment_created_date(comment)%> in <%= link_to title_for(Post.find_by_id(comment.post_id)),Post.find_by_id(comment.post_id)%> comment:</p>
-                        <div class = "profile-comment-card-content">
-                            <%= comment.content %>
+                    <div class="panel-heading">Recent comments:</div>
+                    <% @comments.each do |comment| %>
+                        <div class="profile-comment-card">
+                            <p><%=comment_created_date(comment)%> in <%= link_to title_for(Post.find_by_id(comment.post_id)),Post.find_by_id(comment.post_id)%> comment:</p>
+                            <div class = "profile-comment-card-content">
+                                <%= comment.content %>
+                            </div>
                         </div>
-                    </div>
-                <% end %>
+                    <% end %>
                 </div>
             </div>
             <div class="clear"></div>

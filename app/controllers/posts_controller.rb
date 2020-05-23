@@ -38,6 +38,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    Post.find(params[:id]).destroy
+    flash[:success]="Post deleted"
+    redirect_to "/my_posts"
+  end
+
   private
 
     def logged_in_user

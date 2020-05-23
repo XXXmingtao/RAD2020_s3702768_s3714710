@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   post '/newpost', to: 'posts#create'
   post '/posts/:id/comment', to: 'comments#create'
   post '/posts/:id/comment/:reply', to: 'comments#create'
+  get '/my_posts', to: 'users#my_posts'
+  get '/my_comments', to: 'users#my_comments'
   resources :users
   resources :posts
   resources :comments

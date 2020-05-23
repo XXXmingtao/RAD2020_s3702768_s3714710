@@ -18,6 +18,14 @@ class CommentsController < ApplicationController
     redirect_to request.referrer
   end
 
+  def destroy
+    post = Post.find_by_id(Comment.find(params[:id]).post_id)
+    post.update_column(:comment, post.comment-=1) unless post.nil?
+    Comment.find(params[:id]).destroy
+    flash[:success]="Comment deleted"
+    redirect_to "/my_comments"
+  end
+
   private
 
   def logged_in_user

@@ -1,0 +1,17 @@
+<body class="home-bg">
+<%= render 'layouts/left_side_bar' %>
+    <div class="setting-main-panel">
+        <% @posts.each do |post| %>
+            <div class="profile-post-card">
+                <div class="profile-post-card-title my-post-card-title">
+                    <%= link_to post.title, post %>
+                </div>
+                <div class="profile-post-card-time my-post-card-time">
+                    <%= post_created_date(post)%>
+                </div>
+                <%=link_to "Delete", post, method: :delete, data: {confirm: "You sure?"}, class:"my-post-comment-button" %>
+                <div class="clear"></div>
+            </div>
+        <% end %>
+    </div>
+</body>

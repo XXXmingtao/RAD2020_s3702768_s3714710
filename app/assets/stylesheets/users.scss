@@ -104,6 +104,12 @@
     margin-bottom: 30px;
   }
 
+  .edit-bg .container{
+    position: relative;
+    height: 60em;
+    margin-bottom: 30px;
+  }
+
   .update-field-avatar {
     margin-top: 2em;
     margin-left: 2em;
@@ -453,10 +459,42 @@
     border-radius: 5%;
   }
 
-  .profile-comment-card a{
+  .profile-comment-card>p>a{
     color:rgb(20, 136, 224);
   }
 
-  .profile-comment-card a:hover{
+  .profile-comment-card>p>a:hover{
     color:rgb(30,158,255);
+  }
+
+  /* My Posts/Comments */
+
+  .my-post-card-title{
+    width: 75% !important;
+  }
+
+  .my-comment-card-title{
+    width: 80% !important;
+  }
+
+  .my-post-card-time{
+    width: 15% !important;
+  }
+
+  .my-comment-card-content{
+    width: 75%;
+    float: left;
+  }
+
+  .my-post-comment-button{
+    width: 5%;
+    float: right;
+    background-color: rgb(196, 0, 0);
+    color: white;
+    text-align: center;
+  }
+
+  .my-post-comment-button:hover{
+    background-color: rgb(238, 1, 1);
+    color: white;
   }

@@ -52,6 +52,16 @@ class UsersController < ApplicationController
     flash[:success]="User deleted"
     redirect_to users_url
   end
+
+  def my_posts
+    @posts = Post.where(user_id:current_user.id)
+    render "/users/my_posts"
+  end
+
+  def my_comments
+    @comments = Comment.where(user_id:current_user.id)
+    render "/users/my_comments"
+  end
   
   private
   

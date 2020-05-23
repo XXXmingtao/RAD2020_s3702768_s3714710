@@ -1,0 +1,15 @@
+<body class="home-bg">
+<%= render 'layouts/left_side_bar' %>
+    <div class="setting-main-panel">
+        <% @comments.each do |comment| %>
+            <div class="profile-comment-card">
+                <p class="profile-post-card-title my-comment-card-title"><%=comment_created_date(comment)%> in <%= link_to title_for(Post.find_by_id(comment.post_id)),Post.find_by_id(comment.post_id)%> comment:</p>
+                <%=link_to "Delete", comment, method: :delete, data: {confirm: "You sure?"}, class:"my-post-comment-button" %>
+                <div class="clear"></div>
+                <div class = "profile-comment-card-content">
+                    <%= comment.content %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</body>
