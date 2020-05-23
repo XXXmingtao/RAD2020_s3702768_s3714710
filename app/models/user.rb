@@ -17,6 +17,9 @@ class User < ApplicationRecord
     has_one_attached :avatar
     has_one_attached :verifycard
 
+    
+
+
     def User.digest(string)
         cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                       BCrypt::Engine.cost

@@ -10,8 +10,10 @@
   </ul>
   <%= render'shared/error_messages' %>
   <div class="explanation-bar">You can modify your contract details below</div>
-  <div class="update-field" id="edit-info">
+
   <%= form_for(@user) do |f| %>
+  <div class="update-field" id="edit-info">
+  
     
     <div class="input-group">
      <span class="input-group-addon" id="basic-addon1">Username</span>
@@ -48,11 +50,11 @@
     <div class="update-field-avatar" id="edit-avatar">
       <label class="btn btn-default">
         Upload Image 
-        <%= f.file_field :avatar ,class:'hidden-avatar-input'%>
+        <%= f.file_field :avatar ,class:'hidden-avatar-input', onchange:"readURL(this);"%>
       </label>
       <span class="size-constraint">no image than 2mb</span>
       <div class="user-icon-preview">
-      <%= gravatar_for current_user %> 
+        <%= gravatar_for current_user %> 
       </div>
     </div>
 
@@ -72,12 +74,12 @@
 
     <div class="input-group">
      <span class="input-group-addon student-field" id="basic-addon1">Student Name</span>
-    <input type="text" class="form-control" placeholder="Your student name" aria-describedby="basic-addon1">
+     <%= f.text_field :studentname,class:'form-control' %>
     </div>
 
     <div class="input-group">
     <span class="input-group-addon student-field" id="basic-addon1">Card Number</span>
-    <input type="text" class="form-control" placeholder="Please enter student number" aria-describedby="basic-addon1">
+    <%= f.text_field :studentid,class:'form-control' %>
     </div>
 
     <label class="btn btn-default">
@@ -85,6 +87,7 @@
         <%= f.file_field :verifycard ,class:'hidden-avatar-input'%>
       </label>
       <span class="size-constraint">no image than 2mb</span>
+      
     <div class="student-card-field">
     
     <% if @user.verifycard.attached? %>
@@ -92,12 +95,15 @@
     <% else %>
     <%= image_tag('anonymous.png', draggable: "true", id: "anonymous") %>
     <% end %>
+
+    
     </div>
     </div>
     
     <div class="confirm-button">
-    <%= f.submit"Confirm",class:"btn btn-primary" %>
+    <%= f.submit "Confirm",class:"btn btn-primary" %>
     </div>
   <% end %>
+
 </div>
 
