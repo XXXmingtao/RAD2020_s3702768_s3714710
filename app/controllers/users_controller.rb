@@ -38,7 +38,6 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-
     if @user.update_attributes(user_params)
       flash[:success]="Profile updated"
       redirect_to @user
@@ -62,11 +61,32 @@ class UsersController < ApplicationController
     @comments = Comment.where(user_id:current_user.id)
     render "/users/my_comments"
   end
+
+  def verify
+    @user = User.find(params[:id])
+    verification = verify_params
+    if verification["student_name"] == "" || verification["card_num"] == "" || verification["verifycard"].nil?
+      flash[:fail]="All fields are required for verification!"
+      redirect_to request.referrer
+    else
+      if @user.update_attributes(verify_params)
+        flash[:success]="Verification updated"
+        redirect_to @user
+      else
+        render 'edit'
+      end
+    end
+    
+  end
   
   private
   
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation, :email, :phone, :address, :userbio, :avatar, :studentname, :studentid, :verifycard)
+    end
+
+    def verify_params
+      params.require(:user).permit(:student_name, :card_num, :verifycard)
     end
 
     def logged_in_user

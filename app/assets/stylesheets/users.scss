@@ -104,15 +104,8 @@
     margin-bottom: 30px;
   }
 
-  .edit-bg .container{
-    position: relative;
-    height: 60em;
-    margin-bottom: 30px;
-  }
-
   .update-field-avatar {
     margin-top: 2em;
-    margin-left: 2em;
     margin-bottom: 2em;
     display: none;
   }
@@ -131,17 +124,20 @@
 
   }
 
-  .update-field-verification .btn-default {
+  .update-field-verification .btn-default,.update-field-avatar .btn-default {
     margin-top: 2em;
-    margin-left: 2em;
     margin-bottom: 2em;
   }
 
   .student-card-field {
-    margin-left: 2em;
-    height: 20em;
-    width: 30em;
+    height: 300px;
+    width: 481px;
     overflow: hidden;
+  }
+
+  .student-card-field img{
+    height: 100%;
+    width: auto;
   }
 
   .input-group .student-field {
@@ -157,12 +153,10 @@
     height: 15em;
   }
 
-  .update-field-avatar .btn-default {
-    background-color: #f1f1f1;
-  }
 
   .text-panel {
     margin-top: 2em;
+    margin-bottom :0 !important;
     border:none !important;
     box-shadow: none !important;
   }
@@ -258,6 +252,7 @@
   .confirm-button {
     width: 6em;
     height: 1.5em;
+    margin-top: 30px;
   }
 
   .confirm-button .btn-primary {

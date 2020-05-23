@@ -3,7 +3,7 @@ module UsersHelper
         size = options[:size]
         if user
             if user.avatar.attached?
-                image_tag(url_for(user.avatar), alt: user.name, class: "gravatar", id:'img-preview')
+                image_tag(url_for(user.avatar), alt: user.name, class: "gravatar")
             else
                 gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
                 gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"

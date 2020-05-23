@@ -26,14 +26,21 @@
       $('#edit-password').hide()
       $('#edit-verification').show(500)
 
-    @readURL = (input) ->
+    @readAvatar = (input) ->
       if input.files and input.files[0]
         reader = new FileReader
-
         reader.onload = (e) ->
-         $('#img_prev').attr('src', e.target.result)
+         $('#avatar_prev').attr('src', e.target.result)
          return
+        reader.readAsDataURL input.files[0]
+      return
 
+    @readVerification = (input) ->
+      if input.files and input.files[0]
+        reader = new FileReader
+        reader.onload = (e) ->
+         $('#verification_prev').attr('src', e.target.result)
+         return
         reader.readAsDataURL input.files[0]
       return
 

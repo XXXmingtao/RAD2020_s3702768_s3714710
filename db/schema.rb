@@ -74,8 +74,8 @@ ActiveRecord::Schema.define(version: 2020_05_23_083947) do
     t.string "phone"
     t.string "address"
     t.string "userbio"
-    t.string "studentname"
-    t.string "studentid"
+    t.string "student_name"
+    t.string "card_num"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

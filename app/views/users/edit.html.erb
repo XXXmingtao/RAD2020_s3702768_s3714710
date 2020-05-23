@@ -9,11 +9,10 @@
     <li onClick="showVerify()">Verification</li>
   </ul>
   <%= render'shared/error_messages' %>
-  <div class="explanation-bar">You can modify your contract details below</div>
 
   <%= form_for(@user) do |f| %>
   <div class="update-field" id="edit-info">
-  
+    <div class="explanation-bar">You can modify your contact details below</div>
     
     <div class="input-group">
      <span class="input-group-addon" id="basic-addon1">Username</span>
@@ -21,89 +20,103 @@
     </div>
 
     <div class="input-group">
-    <span class="input-group-addon" id="basic-addon1">Email</span>
-    <%= f.email_field :email,class:'form-control' %>
+      <span class="input-group-addon" id="basic-addon1">Email</span>
+      <%= f.email_field :email,class:'form-control' %>
     </div>
 
     <div class="input-group">
-    <span class="input-group-addon" id="basic-addon1">Mobile</span>
-    <%= f.phone_field :phone,class:'form-control' %>
+      <span class="input-group-addon" id="basic-addon1">Mobile</span>
+      <%= f.phone_field :phone,class:'form-control' %>
     </div>
 
     <div class="input-group">
-    <span class="input-group-addon" id="basic-addon1">City</span>
-    <%= f.text_field :address ,class:'form-control', placeholder: 'Address' %>
+      <span class="input-group-addon" id="basic-addon1">City</span>
+      <%= f.text_field :address ,class:'form-control', placeholder: 'Address' %>
     </div>
-
-    <div class="error-message-area">
-    </div>
-
 
     <div class="panel panel-default text-panel">
-    <div class="panel-heading">Personal Description</div>
-    <%= f.text_area(:userbio, cols: 20, rows: 10, placeholder: 'Please enter your bio : )') %>
-    
-    </div>
-    
+      <div class="panel-heading">Personal Description</div>
+      <%= f.text_area(:userbio, cols: 20, rows: 10, placeholder: 'Please enter your bio : )') %>
     </div>
 
-    <div class="update-field-avatar" id="edit-avatar">
-      <label class="btn btn-default">
-        Upload Image 
-        <%= f.file_field :avatar ,class:'hidden-avatar-input', onchange:"readURL(this);"%>
-      </label>
-      <span class="size-constraint">no image than 2mb</span>
-      <div class="user-icon-preview">
-        <%= gravatar_for current_user %> 
-      </div>
+    <div class="confirm-button">
+      <%= f.submit "Confirm",class:"btn btn-primary" %>
     </div>
+  </div>
+
+  <div class="update-field-avatar" id="edit-avatar">
+    <div class="explanation-bar">You can upload your avatar for this forum below</div>
+    <label class="btn btn-default">
+      Upload avatar 
+      <%= f.file_field :avatar ,class:'hidden-avatar-input', onchange:"readAvatar(this);"%>
+    </label>
+    <span class="size-constraint">no larger than 2mb</span>
+    <div class="user-icon-preview">
+      <% if @user.avatar.attached? %>
+        <%= image_tag(url_for(@user.avatar), id: "avatar_prev") %>
+      <% else %>
+        <%= image_tag("anonymous.png", id: "avatar_prev") %>
+      <% end %>
+    </div>
+    <div class="confirm-button">
+      <%= f.submit "Confirm",class:"btn btn-primary" %>
+    </div>
+  </div>
 
     <div class="update-field-password" id="edit-password">
-    <div class="input-group">
-     <span class="input-group-addon password-field" id="basic-addon1">New Password</span>
-     <%= f.password_field :password,class:'form-control' %>
-    </div>
+      <div class="explanation-bar">Reset your password</div>
+      <div class="input-group">
+        <span class="input-group-addon password-field" id="basic-addon1">New Password</span>
+        <%= f.password_field :password,class:'form-control' %>
+      </div>
 
-    <div class="input-group">
-    <span class="input-group-addon password-field" id="basic-addon1">Confirm</span>
-    <%= f.password_field :password_confirmation,class:'form-control' %>
-    </div>
-    </div>
+      <div class="input-group">
+        <span class="input-group-addon password-field" id="basic-addon1">Confirm</span>
+        <%= f.password_field :password_confirmation,class:'form-control' %>
+      </div>
 
-    <div class="update-field-verification" id="edit-verification">
-
-    <div class="input-group">
-     <span class="input-group-addon student-field" id="basic-addon1">Student Name</span>
-     <%= f.text_field :studentname,class:'form-control' %>
-    </div>
-
-    <div class="input-group">
-    <span class="input-group-addon student-field" id="basic-addon1">Card Number</span>
-    <%= f.text_field :studentid,class:'form-control' %>
-    </div>
-
-    <label class="btn btn-default">
-        Upload Image 
-        <%= f.file_field :verifycard ,class:'hidden-avatar-input'%>
-      </label>
-      <span class="size-constraint">no image than 2mb</span>
-      
-    <div class="student-card-field">
-    
-    <% if @user.verifycard.attached? %>
-      <image src="<%=(url_for(@user.verifycard))%>" style="width:100%; height:100%;">
-    <% else %>
-    <%= image_tag('anonymous.png', draggable: "true", id: "anonymous") %>
-    <% end %>
-
-    
-    </div>
-    </div>
-    
-    <div class="confirm-button">
-    <%= f.submit "Confirm",class:"btn btn-primary" %>
+      <div class="confirm-button">
+        <%= f.submit "Confirm",class:"btn btn-primary" %>
+      </div>
     </div>
   <% end %>
+  
 
+  
+  
+  <div class="update-field-verification" id="edit-verification">
+    <%= form_for(@user,url: "/users/#{current_user.id}/verify") do |f| %>
+      <div class="explanation-bar">Upload your student verification</div>
+      <div class="input-group">
+      <span class="input-group-addon student-field" id="basic-addon1">Student Name</span>
+      <%= f.text_field :student_name,class:'form-control' %>
+      </div>
+
+      <div class="input-group">
+      <span class="input-group-addon student-field" id="basic-addon1">Card Number</span>
+      <%= f.text_field :card_num,class:'form-control' %>
+      </div>
+
+      <label class="btn btn-default">
+        Upload Image 
+        <div class="verification-img">
+          <%= f.file_field :verifycard ,class:'hidden-avatar-input', onchange:"readVerification(this);"%>
+        </div>
+      </label>
+      <span class="size-constraint">no larger than 2mb</span>
+      
+      <div class="student-card-field">
+        <% if @user.verifycard.attached? %>
+          <%= image_tag(url_for(@user.verifycard), id: "verification_prev") %>
+        <% else %>
+          <%= image_tag('empty_card.png', id: "verification_prev") %>
+        <% end %>
+      </div>
+      <div class="confirm-button">
+        <%= f.submit "Confirm",class:"btn btn-primary" %>
+      </div>
+    <% end %>
+      
+  </div>
 </div>
 

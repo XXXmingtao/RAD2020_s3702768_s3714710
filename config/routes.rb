@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   post '/posts/:id/comment/:reply', to: 'comments#create'
   get '/my_posts', to: 'users#my_posts'
   get '/my_comments', to: 'users#my_comments'
+  patch '/users/:id/verify', to: 'users#verify'
   resources :users
   resources :posts
   resources :comments
