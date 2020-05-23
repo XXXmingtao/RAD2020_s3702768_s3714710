@@ -17,4 +17,18 @@ class StaticPagesController < ApplicationController
       render 'search'
     end
   end
+
+  private 
+
+    def count_popular_topics
+      popular_topics = Hash.new
+      Post.all.each do |post|
+        if popular_topics.key?(post.topic)
+          popular_topics[post.topic]+=post.view
+        else
+          popular_topics[post.topic] = post.view
+        end
+      end
+      return popular_topics.sort_by {|k,v| v}.reverse.first 2
+    end
 end

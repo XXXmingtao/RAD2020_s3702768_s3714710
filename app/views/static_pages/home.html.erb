@@ -3,12 +3,12 @@
       <input type="radio" id="recent" name="display" value="recent" checked="checked" />
       <span>Recent Post</span>
     </div>
-    <div class="post-board-radio" onClick="displaySelected()">
+    <div class="post-board-radio" id="post-board-radio-selected" onClick="displaySelected()">
       <input type="radio" id="selected" name="display" value="selected" />
       <span>Selected Post</span>
     </div>
     <% if logged_in? %>
-      <a href="#" class="post-board-setting">My Setting</a>
+      <%= link_to "My Setting",edit_user_path(current_user), class:"post-board-setting"%>
     <% end %>
     <div class="post-board-search">
       <%= form_tag("/search",method: :get) do %>

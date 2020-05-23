@@ -12,7 +12,7 @@
     <body>
   <% elsif request.env['PATH_INFO'].include?("/users") %>
     <% if (request.env['PATH_INFO'].include?("/edit")) || (@user.errors.any?) %>
-      <body class="home-bg edit-bg">>
+      <body class="home-bg edit-bg">
     <% else %>
       <body class="profile-bg">
     <% end %>

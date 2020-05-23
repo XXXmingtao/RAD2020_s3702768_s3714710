@@ -35,10 +35,10 @@
 
         <% Topic.all.each do |t| %>
           <% if t.topic != "News" %>
-            <div class="topic-checkbox" onClick="selectTopic()">
+            <%= content_tag :div, class: "topic-checkbox", :onclick=>"selectTopic()" do %>
               <%= check_box_tag t.topic %>
               <%= label_tag t.topic,t.topic %>
-            </div>
+            <% end %>
           <%end%>
         <%end%>
 
