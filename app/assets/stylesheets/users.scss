@@ -96,9 +96,13 @@
 
   .update-field {
     margin-top: 2em;
-     
   }
 
+  .edit-bg .container{
+    position: relative;
+    height: 60em;
+    margin-bottom: 30px;
+  }
 
   .update-field-avatar {
     margin-top: 2em;
@@ -115,7 +119,6 @@
   }
 
   .update-field-verification {
-
     margin-top: 2em;
     margin-bottom: 2em;
     display: none;
@@ -144,33 +147,23 @@
   }
 
   #cyber {
-    
     width: 20em;
     height: 15em;
   }
 
-
-
   .update-field-avatar .btn-default {
-
     background-color: #f1f1f1;
-
-  }
-
-
-  .panel-default textarea {
-    height: 92%;
   }
 
   .text-panel {
     margin-top: 2em;
+    border:none !important;
+    box-shadow: none !important;
   }
-
 
   .input-group {
     width: 35%;
     margin-top: 1em;
-    margin-left: 2em;
   }
 
   .input-group-addon {
@@ -179,7 +172,6 @@
   }
 
   .text-panel {
-    margin-left: 2em;
     height: 10em;
   }
 
@@ -188,34 +180,42 @@
     width: 2em;
   }
 
-  .setting-bg .sidebar{
-    width: 15em;
-    height: 85em;
-    border-radius: 15px;
+  .left-setting-sidebar{
+    width: 17%;
+    float: left;
+    min-height: 100%;
+    border-radius: 5px;
     margin-bottom: 2em;
     margin-top: 30px;
     background-color: #393d48;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    position: absolute;
+  }
+
+  .sub-link{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: aliceblue;
+    padding:10px 15px;
+  }
+
+  .sub-link:hover {
+    background-color: rgb(78,83,101);
+    border-left: 3px solid #009486;
+    padding-left: 12px;
   }
 
   .explanation-bar {
-    
-    width: 90%;
-    margin-left: 2em;
     margin-top: 2em;
-    height: 6em;
     padding: 2em;
     padding-left: 4em;
     background-color: #f1f1f1;
   }
 
-  .main-panel {
+  .setting-main-panel {
     float: right;
-    width: 83%;
-    height: 85em;
-    margin-top: 2em;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 82%;
+    height: 100%;
+    margin-top: 30px;
+    padding: 0 20px;
+    background-color: white;
   }
 
   #anonymous {
@@ -252,8 +252,6 @@
   .confirm-button {
     width: 6em;
     height: 1.5em;
-    margin-left: 2em;
-    
   }
 
   .confirm-button .btn-primary {
@@ -261,35 +259,25 @@
   }
 
   .panel-sub-nav {
-    border-style: solid;
-    border-color: #f1f1f1;
-    border-top: 0em;
-    border-left: 0em;
-    border-right: 0em;
-    border-width: 2px;
-    height: 4em;
-    margin-top: 2em;
-    
+    border-bottom: solid 2px #f1f1f1;
+    margin-top: 25px;
+    padding:0;
   }
 
   .panel-sub-nav li {
-
     margin-right: 2em;
-    margin-top: 1em;
+    margin-bottom: 10px;
     display: inline-block;
     cursor: pointer;
   }
 
   .panel-sub-nav li {
     font-size: 1.5em;
-    
   }
 
   .panel-sub-nav li:hover {
     color: #009486;
   }
-
-
 
   .setting-form {
     width: 100%;
@@ -300,32 +288,6 @@
     vertical-align: -0.5em;
   }
 
-  .setting-bg .sidebar a {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: aliceblue;
-  }
-
-  .setting-bg .sidebar a:hover {
-    color: skyblue;
-  }
-
-  .sidebar .side-link {
-    display: inline-block;
-    text-align: left;
-    margin-left: 2em;
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .sub-link {
-    margin: 20px 0;
-  }
-
-
-  .setting-bg .container {
-    width: 100%;
-    display: inline-block;
-  }
 
   .navbar-fixed-left {
     width: 140px;
@@ -380,7 +342,7 @@
 
   .panel-default {
     width: 49.5%;
-    min-height: 30em;
+    height: auto !important;
   }
 
   .btn-default .hidden-avatar-input {
@@ -397,7 +359,8 @@
 
   .panel-heading {
     text-align: left;
-    border:none;
+    border: 1px solid rgb(210, 210, 210) !important;
+    background-color: rgb(238,238,238) !important;
   }
 
   .profile .container .panel-body {
