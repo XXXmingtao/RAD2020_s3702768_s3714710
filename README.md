@@ -1,25 +1,21 @@
-## Building the rails App
+## Team members
+Tianwei Li (s3702768)
+Mingtao Liu (s3714710)
 
-1. Run `docker-compose build` after every Gemfile change or to build the containers
+## Level attempted
+90+
 
-## Running the rails App
-1. Run `docker-compose up` to run the rails app
-2. hit `http://0.0.0.0:3000`
+## Time spent
+Tianwei Li: 92 hours (13/05 - 24/05; average work hours/day: 7h)
+Mingtao Liu: 84.6 hours (13/05 - 24/05; average work hours/day: 6.5h)
 
-## Debugging the Rails App
+## Heroku deployment URL & deployment log
+heroku: https://rad2020-s3702768-s3714710.herokuapp.com/
 
-1. Add `binding.pry` or `byebug` in your code where you want to put the breakpoint.
-2. Run `docker-compose run --service-port --rm web` in your console to run the rails app in Debug mode
-3. Access the endpoint you are debugging to go into debugging mode in pry or byebug
+s3702768@student.rmit.edu.au: Deployed bb3ae92d
+Today at 1:12 AM · v13
 
-## Rails CHEATSHEET using docker
+## Git repository
+RAD2020_s3702768_s3714710
 
-1. `docker-compose run --rm web rails new . --force --no-deps --database=postgresql`
-2. `docker-compose run --rm web bundle install`
-3. `docker-compose run --rm web bundle update`
-4. `docker-compose run --rm web rails db:create`
-5. `docker-compose run --rm web rails db:migrate`
-6. `docker-compose run --rm web rails db:drop`
-7. `docker-compose run --rm web rails assets:precompile`
-8. `docker-compose run --rm web rails console`
-9. `docker-compose run --rm web rails test`
+https://github.com/XXXmingtao/RAD2020_s3702768_s3714710.git
