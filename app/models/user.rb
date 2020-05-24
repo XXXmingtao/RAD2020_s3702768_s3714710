@@ -14,7 +14,7 @@ class User < ApplicationRecord
     validates :password, presence: true, length: { minimum: 6 }, format: { with: VALID_PASS_REGEX }, allow_nil:true
     validates :address, presence: true, length: {maximum: 45 }, allow_blank: true
     validates :userbio, presence: true, allow_blank: true
-    VALID_STUDENT_NAME_REGEX = /[a-zA-Z]/
+    VALID_STUDENT_NAME_REGEX = /\A[a-zA-Z\s]+\Z/
     VALID_CARD_NUM_REGEX = /\d{7}/
     validates :student_name, presence: true, length: {maximum: 50 }, format: {with: VALID_STUDENT_NAME_REGEX }, allow_nil:true
     validates :card_num, presence: true, length: {maximum: 7 }, format: {with: VALID_CARD_NUM_REGEX }, allow_nil:true

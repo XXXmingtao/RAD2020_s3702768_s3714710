@@ -17,11 +17,29 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
         assert_template 'users/new'
     end
 
+    test "username should be unique" do
+        get signup_path
+        post users_path,params: {user: {name:"Example User",
+            email:"user@example.com",
+            password:"password",
+            password_confirmation:"password",
+            phone: "0412345678"} }
+        get signup_path
+        assert_no_difference 'User.count' do
+            post users_path,params: {user: {name:"Example User",
+                email:"user2@example.com",
+                password:"foobar123",
+                password_confirmation:"foobar123",
+                phone: "0487654321"} }
+            end
+        assert_template 'users/new'
+    end
+
     test "valid signup information with account activation" do
         get signup_path
         assert_difference 'User.count', 1 do
-            post users_path,params: {user: {name:"Example User",
-                email:"user@example.com",
+            post users_path,params: {user: {name:"Aerith Gainsborough",
+                email:"aerith@ff7.com",
                 password:"password",
                 password_confirmation:"password",
                 phone: "0412345678"} }
