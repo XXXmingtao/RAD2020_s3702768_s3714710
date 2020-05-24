@@ -3,10 +3,10 @@
 
 <div class="setting-main-panel">
   <ul class="panel-sub-nav">
-    <li onClick="showInfo()">Personal Info</li>
-    <li onClick="showAvatar()">Avatar</li>
-    <li onClick="showPassword()">Password</li>
-    <li onClick="showVerify()">Verification</li>
+    <li onClick="showInfo()" id="setting-info-btn">Personal Info</li>
+    <li onClick="showAvatar()" id="setting-avatar-btn">Avatar</li>
+    <li onClick="showPassword()" id="setting-password-btn">Password</li>
+    <li onClick="showVerify()" id="setting-verification-btn">Verification</li>
   </ul>
   <%= render'shared/error_messages' %>
 
@@ -44,7 +44,7 @@
     </div>
   </div>
 
-  <div class="update-field-avatar" id="edit-avatar">
+  <div class="update-field" id="edit-avatar">
     <div class="explanation-bar">You can upload your avatar for this forum below</div>
     <label class="btn btn-default">
       Upload avatar 
@@ -63,7 +63,7 @@
     </div>
   </div>
 
-    <div class="update-field-password" id="edit-password">
+    <div class="update-field" id="edit-password">
       <div class="explanation-bar">Reset your password</div>
       <div class="input-group">
         <span class="input-group-addon password-field" id="basic-addon1">New Password</span>
@@ -84,7 +84,7 @@
 
   
   
-  <div class="update-field-verification" id="edit-verification">
+  <div class="update-field" id="edit-verification">
     <%= form_for(@user,url: "/users/#{current_user.id}/verify") do |f| %>
       <div class="explanation-bar">Upload your student verification</div>
       <div class="input-group">

@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :logged_in_user,only:[:create]
+  before_action :correct_user, only: :destroy
 
   def create
     @comment=Comment.new(comment_params)
@@ -33,6 +34,10 @@ class CommentsController < ApplicationController
       flash[:danger]= "Please log in."
       redirect_to login_url
     end
+  end
+
+  def correct_user
+    redirect_to(root_url) unless current_user.id==Comment.find(params[:id]).user_id
   end
 
   def comment_params

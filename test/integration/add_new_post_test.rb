@@ -43,15 +43,11 @@ class AddNewPostTest < ActionDispatch::IntegrationTest
     end
 
     test "The number of views of a post increases by 1 when a viewer opens the post page." do
-        log_in_as(@user)
-        post posts_path, params: {post: {title:"Test",
-            topic:"",
-            text:"This is a test post"} }
-        follow_redirect!
+        path = "/posts/#{posts(:one).id}"
+        get path
         assert_select 'div.card-info-view', "1"
-        @path = path
         get root_path
-        get @path
+        get path
         assert_select 'div.card-info-view', "2"
     end
 end

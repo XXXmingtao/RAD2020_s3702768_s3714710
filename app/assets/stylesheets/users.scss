@@ -104,27 +104,11 @@
     margin-bottom: 30px;
   }
 
-  .update-field-avatar {
-    margin-top: 2em;
-    margin-bottom: 2em;
-    display: none;
+  #edit-verification, #edit-password, #edit-avatar{
+    display:none;
   }
 
-  .update-field-password {
-    margin-top: 2em;
-    margin-bottom: 2em;
-    display: none;
-    
-  }
-
-  .update-field-verification {
-    margin-top: 2em;
-    margin-bottom: 2em;
-    display: none;
-
-  }
-
-  .update-field-verification .btn-default,.update-field-avatar .btn-default {
+  .update-field .btn-default {
     margin-top: 2em;
     margin-bottom: 2em;
   }
@@ -266,9 +250,14 @@
 
   .panel-sub-nav li {
     margin-right: 2em;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
     display: inline-block;
     cursor: pointer;
+  }
+
+  #setting-info-btn{
+    border-bottom: 2px solid #009486;
+    color:#009486;
   }
 
   .panel-sub-nav li {

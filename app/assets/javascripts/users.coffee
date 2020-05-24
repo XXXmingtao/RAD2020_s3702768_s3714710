@@ -3,28 +3,28 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
     @showInfo=() ->
-      $('#edit-info').show(500)
-      $('#edit-avatar').hide()
-      $('#edit-password').hide()
-      $('#edit-verification').hide()
+      $('.update-field').hide()
+      $('#edit-info').show()
+      $('.panel-sub-nav li').css("color":"black","border":"none")
+      $('#setting-info-btn').css("color":"#009486","border-bottom":"2px solid #009486")
 
     @showAvatar=() ->
-      $('#edit-info').hide()
-      $('#edit-avatar').show(500)
-      $('#edit-password').hide()
-      $('#edit-verification').hide()
+      $('.update-field').hide()
+      $('#edit-avatar').show()
+      $('.panel-sub-nav li').css("color":"black","border":"none")
+      $('#setting-avatar-btn').css("color":"#009486","border-bottom":"2px solid #009486")
 
     @showPassword=() ->
-      $('#edit-info').hide()
-      $('#edit-avatar').hide()
-      $('#edit-password').show(500)
-      $('#edit-verification').hide()
+      $('.update-field').hide()
+      $('#edit-password').show()
+      $('.panel-sub-nav li').css("color":"black","border":"none")
+      $('#setting-password-btn').css("color":"#009486","border-bottom":"2px solid #009486")
 
     @showVerify=() ->
-      $('#edit-info').hide()
-      $('#edit-avatar').hide()
-      $('#edit-password').hide()
-      $('#edit-verification').show(500)
+      $('.update-field').hide()
+      $('#edit-verification').show()
+      $('.panel-sub-nav li').css("color":"black","border":"none")
+      $('#setting-verification-btn').css("color":"#009486","border-bottom":"2px solid #009486")
 
     @readAvatar = (input) ->
       if input.files and input.files[0]

@@ -4,11 +4,7 @@ class MakeCommentTest < ActionDispatch::IntegrationTest
 
     def setup
         log_in_as(users(:michael))
-        post posts_path, params: {post: {title:"Test",
-            topic:"Game",
-            text:"This is a test post"} }
-            follow_redirect!
-        @path = path
+        @path = "/posts/#{posts(:one).id}"
     end
     
     test "empty comment" do
