@@ -5,14 +5,14 @@
         <%= form_for(@user,url: signup_path) do |f| %>
         <%= render 'shared/error_messages' %>
             <div class="new-user-inputs">
-            <%= f.label :name %>
-            <%= f.text_field :name, class:'form-control', placeholder: "Name will be displayed to others" %>
+            <%= f.label :name, "Username" %>
+            <%= f.text_field :name, class:'form-control', placeholder: "enter username" %>
             <div class="clear"></div>
             </div>
             
             <div class="new-user-inputs">
             <%= f.label :email %>
-            <%= f.email_field :email, class:'form-control', placeholder: "Your Email" %>
+            <%= f.email_field :email, class:'form-control', placeholder: "enter your email" %>
             <div class="clear"></div>
             </div>
 
@@ -23,14 +23,14 @@
             </div>
 
             <div class="new-user-inputs">
-            <%= f.label :password_confirmation,"Confirmation" %>
-            <%= f.password_field :password_confirmation, class:'form-control', placeholder:"Double check your pass" %>
+            <%= f.label :password_confirmation,"Comfirmation" %>
+            <%= f.password_field :password_confirmation, class:'form-control', placeholder:"confirm password" %>
             <div class="clear"></div>
             </div>
 
             <div class="new-user-inputs">
             <%= f.label :phone %>
-            <%= f.phone_field :phone, class:'form-control', placeholder:"Your Mobile Phone" %>
+            <%= f.phone_field :phone, class:'form-control', placeholder:"mobile number" %>
             <div class="clear"></div>
             </div>
 

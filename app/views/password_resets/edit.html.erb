@@ -7,13 +7,22 @@
             
             <%=hidden_field_tag :email, @user.email%>
 
-            <%=f.label :password%>
-            <%=f.password_field :password, class: 'form-control'%>
+            <div class="new-user-inputs">
+                <%=f.label :password%>
+                <%=f.password_field :password, class: 'form-control'%>
+            <div class="clear"></div>
+            </div>
 
-            <%=f.label :password_confirmation, "Confirmation"%>
-            <%=f.password_field :password_confirmation, class: 'form-control'%>
-            
-            <%=f.submit "Update password", class: "btn btn-primary"%>
+            <div class="new-user-inputs">
+                <%=f.label :password_confirmation, "Confirmation"%>
+                <%=f.password_field :password_confirmation, class: 'form-control'%>
+            <div class="clear"></div>
+            </div>
+
+            <div class="new-user-button">
+                <%=f.submit "Update password", class: "btn btn-primary"%>
+            <div class="clear"></div>
+            </div>
         <%end%>
     </div>
 </div>
