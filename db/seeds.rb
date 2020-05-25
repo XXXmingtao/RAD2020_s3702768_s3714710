@@ -14,7 +14,7 @@ User.create!(name: "Example User",
     activated: true,
     activated_at: Time.zone.now)
 
-99.times do |n|
+20.times do |n|
     name = Faker::Name.name
     email = "example-#{n+1}@railstutorial.org"
     password = "password"
@@ -27,6 +27,15 @@ User.create!(name: "Example User",
         activated: true,
         activated_at: Time.zone.now)
 end
+
+User.create!(name: "RAD RMIT",
+    email: "rad2020rmit@gmail.com",
+    password: "password", 
+    password_confirmation:"password",
+    admin: true,
+    phone: "0123456789",
+    activated: true,
+    activated_at: Time.zone.now)
 
 ["A.I.","V.R.","RMIT","Game","Rails","Go","Web","News","Ruby","Movie","5G","Node","IOS","AWS"].each {|str|
     Topic.create!(topic: str)
